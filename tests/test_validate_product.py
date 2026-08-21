@@ -52,6 +52,12 @@ class TestValidateProduct(unittest.TestCase):
         errors = validate_product(self.zip_path)
         self.assertTrue(any("too short" in e for e in errors))
 
+    def test_missing_zip_raises_error(self):
+        """Validate that missing zip file raises OSError."""
+        nonexistent = Path(self.tmp.name) / "nonexistent.zip"
+        with self.assertRaises(OSError):
+            validate_product(nonexistent)
+
 
 if __name__ == "__main__":
     unittest.main()

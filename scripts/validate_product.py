@@ -38,7 +38,11 @@ def main(argv):
     if len(argv) != 2:
         print("usage: validate_product.py <zip_path>", file=sys.stderr)
         return 2
-    errors = validate_product(Path(argv[1]))
+    try:
+        errors = validate_product(Path(argv[1]))
+    except (OSError, zipfile.BadZipFile) as e:
+        print(f"could not read zip: {e}", file=sys.stderr)
+        return 2
     if errors:
         print(f"INVALID: {argv[1]}")
         for e in errors:
