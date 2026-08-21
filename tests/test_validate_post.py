@@ -35,6 +35,19 @@ class TestValidatePost(unittest.TestCase):
         errors = validate_post(html)
         self.assertTrue(any("gumroad.com" in e for e in errors))
 
+    def test_multiple_errors_accumulated(self):
+        html = "<p>word you should administer</p>"
+        errors = validate_post(html)
+        self.assertGreater(len(errors), 1)
+        self.assertTrue(any("minimum is" in e for e in errors))
+        self.assertTrue(any("denylisted phrase" in e for e in errors))
+        self.assertTrue(any("gumroad.com" in e for e in errors))
+
+    def test_denylisted_phrase_case_insensitive(self):
+        html = f"<p>{self._long_enough_text('You SHOULD ADMINISTER medicine')}</p><a href='https://gumroad.com/l/x'>Buy</a>"
+        errors = validate_post(html)
+        self.assertTrue(any("denylisted phrase" in e for e in errors))
+
 
 if __name__ == "__main__":
     unittest.main()
