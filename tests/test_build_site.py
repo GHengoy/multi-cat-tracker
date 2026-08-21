@@ -7,7 +7,7 @@ import json
 import tempfile
 import unittest
 
-from build_site import build_site, load_posts, render_post, render_index
+from build_site import build_site, load_posts, render_post, render_index, main
 
 TEMPLATE = "<html><head><title>{{TITLE}}</title></head><body><h1>{{TITLE}}</h1><p>{{DATE}}</p>{{BODY}}</body></html>"
 
@@ -68,6 +68,21 @@ class TestBuildSite(unittest.TestCase):
         ]
         html = render_index(TEMPLATE, posts)
         self.assertLess(html.index("b.html"), html.index("a.html"))
+
+    def test_load_posts_missing_title_raises_valueerror(self):
+        (self.posts_dir / "missing-title.json").write_text(
+            json.dumps({"date": "2026-08-21"}), encoding="utf-8"
+        )
+        (self.posts_dir / "missing-title.html").write_text("<p>body</p>", encoding="utf-8")
+        with self.assertRaises(ValueError) as ctx:
+            load_posts(self.posts_dir)
+        self.assertIn("missing 'title'", str(ctx.exception))
+
+    def test_main_wrong_arg_count_returns_2(self):
+        exit_code = main(["build_site.py"])
+        self.assertEqual(exit_code, 2)
+        exit_code = main(["build_site.py", "a", "b"])
+        self.assertEqual(exit_code, 2)
 
 
 if __name__ == "__main__":

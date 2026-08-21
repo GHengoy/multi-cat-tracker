@@ -13,6 +13,9 @@ def load_posts(posts_dir: Path) -> list[dict]:
         if not body_path.exists():
             raise FileNotFoundError(f"missing body file for post '{slug}': {body_path}")
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        for key in ("title", "date"):
+            if key not in meta:
+                raise ValueError(f"missing '{key}' in {meta_path}")
         body = body_path.read_text(encoding="utf-8")
         posts.append({
             "slug": slug,
@@ -73,7 +76,7 @@ def main(argv):
     posts_dir, template_path, output_dir = (Path(a) for a in argv[1:4])
     try:
         written = build_site(posts_dir, template_path, output_dir)
-    except (OSError, FileNotFoundError, KeyError, json.JSONDecodeError) as e:
+    except (OSError, KeyError, ValueError, json.JSONDecodeError) as e:
         print(f"build failed: {e}", file=sys.stderr)
         return 1
     print(f"Built {len(written)} files into {output_dir}")
