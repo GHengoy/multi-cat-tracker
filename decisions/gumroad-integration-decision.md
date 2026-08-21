@@ -71,3 +71,9 @@ This mirrors the user's existing Gumroad account setup (which they already agree
 ### No API Integration (For Now)
 
 If Gumroad publishes official product creation API docs in the future, this decision can be revisited. Until then, manual creation via the dashboard is the safest, most supported path.
+
+## Result
+
+- Live product URL: https://kimnet8.gumroad.com/l/ecpqxa
+- Verified live via `curl` (HTTP 200) on 2026-08-21.
+- Created manually by the user following the checklist above, including cover image (`product/cover-600x600.png`) and product zip (`product/product.zip`).
