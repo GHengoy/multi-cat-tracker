@@ -1,0 +1,7 @@
+date,notes,cat_name,litter_box_visits,stool_quality,appetite_level,water_intake_ml,medication_given,activity_level,behavior_notes,food_amount_g
+2026-08-21,Morning check,Whiskers,2,normal,normal,45,Probiotic,active,Playing with toys; no visible signs of discomfort,60
+2026-08-21,Evening check,Shadow,1,soft,slightly_reduced,30,None,normal,Sleeping more than usual; eating well when offered,55
+2026-08-21,Bedtime,Mittens,3,normal,normal,50,None,active,Jumping and running; normal behavior,60
+2026-08-22,Morning check,Whiskers,2,normal,normal,48,Probiotic,active,Grooming normally; playful mood,60
+2026-08-22,Afternoon check,Shadow,2,normal,normal,35,None,lethargic,Less active; monitor appetite closely,55
+2026-08-22,Evening check,Mittens,2,normal,normal,52,None,active,Normal behavior; good appetite,60
