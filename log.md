@@ -21,3 +21,9 @@
 - `templates/base.html` 푸터에 beehiiv 구독 링크 추가 (https://multi-cat-tracker.beehiiv.com/subscribe)
 - 전체 10개 페이지(포스트 9개 + index)에 자동 반영, 별도 콘텐츠/스크립트 변경 없음
 - 목적: 무료 재방문 채널 — 새 포스트 게시 시 재방문 유도, 구독자 수 게이팅 없이 니치 B/C로 복제 예정
+
+## [2026-08-27] FEATURE | 결제 프로세서 마이그레이션 준비 (이용약관 페이지 신설)
+
+- `build_site.py`에 unlisted 페이지 지원 추가, `posts/terms.html` 신설 — 사이트에 배포되지만 index엔 미노출
+- Gumroad → Paddle 전환의 1단계: Paddle 심사 시 요구되는 라이브 이용약관 페이지 준비 완료
+- 실제 결제 링크 교체(Task 5)는 Paddle 계정 승인 후 별도로 진행
