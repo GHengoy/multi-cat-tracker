@@ -22,6 +22,7 @@ def load_posts(posts_dir: Path) -> list[dict]:
             "title": meta["title"],
             "date": meta["date"],
             "body": body,
+            "unlisted": meta.get("unlisted", False),
         })
     return posts
 
@@ -37,10 +38,11 @@ def render_post(template: str, post: dict) -> str:
 
 
 def render_index(template: str, posts: list[dict]) -> str:
-    """Fill the base template with a list of links to all posts, newest first."""
+    """Fill the base template with a list of links to all posts, newest first. Posts marked 'unlisted' are excluded."""
+    listed_posts = [p for p in posts if not p.get("unlisted", False)]
     items = "\n".join(
         f'<li><a href="{p["slug"]}.html">{p["title"]}</a> — {p["date"]}</li>'
-        for p in sorted(posts, key=lambda p: p["date"], reverse=True)
+        for p in sorted(listed_posts, key=lambda p: p["date"], reverse=True)
     )
     body = f"<ul>\n{items}\n</ul>"
     return (

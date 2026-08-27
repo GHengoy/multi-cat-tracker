@@ -25,9 +25,12 @@ class TestBuildSite(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
-    def _write_post(self, slug, title, date, body):
+    def _write_post(self, slug, title, date, body, unlisted=False):
+        meta = {"title": title, "date": date}
+        if unlisted:
+            meta["unlisted"] = True
         (self.posts_dir / f"{slug}.json").write_text(
-            json.dumps({"title": title, "date": date}), encoding="utf-8"
+            json.dumps(meta), encoding="utf-8"
         )
         (self.posts_dir / f"{slug}.html").write_text(body, encoding="utf-8")
 
@@ -68,6 +71,23 @@ class TestBuildSite(unittest.TestCase):
         ]
         html = render_index(TEMPLATE, posts)
         self.assertLess(html.index("b.html"), html.index("a.html"))
+
+    def test_render_index_excludes_unlisted_posts(self):
+        posts = [
+            {"slug": "a", "title": "A", "date": "2026-08-20", "body": "", "unlisted": False},
+            {"slug": "terms", "title": "Terms", "date": "2026-08-21", "body": "", "unlisted": True},
+        ]
+        html = render_index(TEMPLATE, posts)
+        self.assertIn("a.html", html)
+        self.assertNotIn("terms.html", html)
+
+    def test_build_site_unlisted_post_builds_but_excluded_from_index(self):
+        self._write_post("first-post", "First Post", "2026-08-21", "<p>hello</p>")
+        self._write_post("terms", "Terms", "2026-08-22", "<p>terms body</p>", unlisted=True)
+        build_site(self.posts_dir, self.template_path, self.output_dir)
+        self.assertTrue((self.output_dir / "terms.html").exists())
+        index_html = (self.output_dir / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("terms.html", index_html)
 
     def test_load_posts_missing_title_raises_valueerror(self):
         (self.posts_dir / "missing-title.json").write_text(
