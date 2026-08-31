@@ -27,3 +27,8 @@
 - `build_site.py`에 unlisted 페이지 지원 추가, `posts/terms.html` 신설 — 사이트에 배포되지만 index엔 미노출
 - Gumroad → Paddle 전환의 1단계: Paddle 심사 시 요구되는 라이브 이용약관 페이지 준비 완료
 - 실제 결제 링크 교체(Task 5)는 Paddle 계정 승인 후 별도로 진행
+
+## [2026-08-31] FEATURE | 개인정보처리방침 페이지 신설 (Paddle 도메인 승인 요건)
+
+- `posts/privacy.html` 신설 — Paddle이 체크아웃 도메인 승인 심사 시 요구하는 개인정보처리방침 페이지, index엔 미노출
+- nav에 Privacy 링크 추가 (Home / Terms 옆)
