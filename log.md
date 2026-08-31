@@ -32,3 +32,12 @@
 
 - `posts/privacy.html` 신설 — Paddle이 체크아웃 도메인 승인 심사 시 요구하는 개인정보처리방침 페이지, index엔 미노출
 - nav에 Privacy 링크 추가 (Home / Terms 옆)
+
+## [2026-08-31] FEATURE | 결제 프로세서 마이그레이션 완료 (Gumroad → Paddle)
+
+- 9개 포스트의 구매 링크를 Paddle.js 체크아웃 오버레이 트리거(`data-paddle-price-id`)로 전체 교체
+- `templates/base.html`에 Paddle.js 스크립트 + 전역 클릭 위임 리스너 추가(포스트마다 JS 반복 없음)
+- `scripts/validate_post.py`의 필수 검사를 gumroad.com 링크에서 `data-paddle-price-id` 속성으로 변경, 관련 테스트 업데이트
+- `posts/terms.html`의 판매자 실명/연락처 플레이스홀더를 실값으로 확정
+- 기존 Gumroad 상품(kimnet8.gumroad.com/l/ecpqxa)은 삭제하지 않고 유지(비용 없음), 사이트에서만 링크 제거
+- Paddle 도메인 승인(ghengoy.github.io)이 아직 Pending이라, 승인 완료 전까지는 실제 체크아웃이 거부될 수 있음 — 승인 완료 여부는 별도 확인 필요

@@ -5,6 +5,8 @@ from pathlib import Path
 
 MIN_WORD_COUNT = 500
 
+REQUIRED_CHECKOUT_ATTR = "data-paddle-price-id"
+
 DENYLISTED_PHRASES = [
     "should administer",
     "diagnos",
@@ -36,8 +38,8 @@ def validate_post(html: str) -> list[str]:
         if phrase in lowered:
             errors.append(f"contains denylisted phrase: '{phrase}'")
 
-    if "gumroad.com" not in lowered:
-        errors.append("missing a gumroad.com product link")
+    if REQUIRED_CHECKOUT_ATTR not in lowered:
+        errors.append(f"missing a {REQUIRED_CHECKOUT_ATTR} checkout trigger")
 
     return errors
 

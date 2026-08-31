@@ -70,9 +70,19 @@
 
 <h2>Get Started Today</h2>
 
-<p>The best way to understand the tracker is to start using it. <a href="https://kimnet8.gumroad.com/l/ecpqxa">Download the Multi-Cat Household Health & Litter Tracker now</a>. You'll get a pre-formatted spreadsheet with example rows already filled in (so you can see exactly how daily logging looks), a printable guide explaining every column in detail, and everything you need to start building clear records of your cats' patterns. For just $14.99, you'll have a tool that pays for itself the first time you bring it to your veterinarian with concrete data instead of vague impressions. Start tracking today and join hundreds of multi-cat owners who now have clarity instead of guessing.</p>
+<p>The best way to understand the tracker is to start using it. <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Download the Multi-Cat Household Health & Litter Tracker now</a>. You'll get a pre-formatted spreadsheet with example rows already filled in (so you can see exactly how daily logging looks), a printable guide explaining every column in detail, and everything you need to start building clear records of your cats' patterns. For just $14.99, you'll have a tool that pays for itself the first time you bring it to your veterinarian with concrete data instead of vague impressions. Start tracking today and join hundreds of multi-cat owners who now have clarity instead of guessing.</p>
 
 </article>
 <footer><p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Subscribe for an email when new posts go live</a></p><p>&copy; 2026</p></footer>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  Paddle.Initialize({ token: "live_2c65c91a22a9d6a12b1872dcedb" });
+  document.addEventListener("click", function (event) {
+    var trigger = event.target.closest("[data-paddle-price-id]");
+    if (!trigger) return;
+    event.preventDefault();
+    Paddle.Checkout.open({ items: [{ priceId: trigger.dataset.paddlePriceId, quantity: 1 }] });
+  });
+</script>
 </body>
 </html>

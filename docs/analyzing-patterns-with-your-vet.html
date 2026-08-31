@@ -78,9 +78,19 @@
 
 <p>Your vet is the expert on interpreting health information. Your expertise is knowing your cats and documenting what you observe. That combination—clear observations from a dedicated owner plus expert interpretation from a trained veterinarian—is powerful.</p>
 
-<p>Start building that data now. <a href="https://kimnet8.gumroad.com/l/ecpqxa">Download the Multi-Cat Household Health & Litter Tracker</a> and begin creating the timeline of observations that will help you and your vet care for each cat more effectively. Tracking takes just minutes a day, and the data you collect becomes invaluable when you need to discuss your cats' health or changes in their patterns with your veterinarian.</p>
+<p>Start building that data now. <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Download the Multi-Cat Household Health & Litter Tracker</a> and begin creating the timeline of observations that will help you and your vet care for each cat more effectively. Tracking takes just minutes a day, and the data you collect becomes invaluable when you need to discuss your cats' health or changes in their patterns with your veterinarian.</p>
 
 </article>
 <footer><p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Subscribe for an email when new posts go live</a></p><p>&copy; 2026</p></footer>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  Paddle.Initialize({ token: "live_2c65c91a22a9d6a12b1872dcedb" });
+  document.addEventListener("click", function (event) {
+    var trigger = event.target.closest("[data-paddle-price-id]");
+    if (!trigger) return;
+    event.preventDefault();
+    Paddle.Checkout.open({ items: [{ priceId: trigger.dataset.paddlePriceId, quantity: 1 }] });
+  });
+</script>
 </body>
 </html>
