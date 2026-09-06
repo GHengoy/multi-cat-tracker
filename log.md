@@ -41,3 +41,9 @@
 - `posts/terms.html`의 판매자 실명/연락처 플레이스홀더를 실값으로 확정
 - 기존 Gumroad 상품(kimnet8.gumroad.com/l/ecpqxa)은 삭제하지 않고 유지(비용 없음), 사이트에서만 링크 제거
 - Paddle 도메인 승인(ghengoy.github.io)이 아직 Pending이라, 승인 완료 전까지는 실제 체크아웃이 거부될 수 있음 — 승인 완료 여부는 별도 확인 필요
+
+## [2026-09-06] FEATURE | sitemap.xml 자동 생성
+
+- `build_site.py`에 `site.json` 기반 sitemap.xml 생성 기능 추가(파일 없으면 기존과 동일 동작 — 하위 호환)
+- Search Console 제출용 URL: https://ghengoy.github.io/multi-cat-tracker/sitemap.xml
+- 개별 포스트/index 출력은 이번 변경으로 영향받지 않음
