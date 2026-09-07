@@ -42,7 +42,10 @@
     var trigger = event.target.closest("[data-paddle-price-id]");
     if (!trigger) return;
     event.preventDefault();
-    Paddle.Checkout.open({ items: [{ priceId: trigger.dataset.paddlePriceId, quantity: 1 }] });
+    Paddle.Checkout.open({
+      settings: { successUrl: "https://ghengoy.github.io/multi-cat-tracker/thank-you-bbylbimjkt0u.html" },
+      items: [{ priceId: trigger.dataset.paddlePriceId, quantity: 1 }]
+    });
   });
 </script>
 </body>

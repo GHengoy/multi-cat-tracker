@@ -47,3 +47,10 @@
 - `build_site.py`에 `site.json` 기반 sitemap.xml 생성 기능 추가(파일 없으면 기존과 동일 동작 — 하위 호환)
 - Search Console 제출용 URL: https://ghengoy.github.io/multi-cat-tracker/sitemap.xml
 - 개별 포스트/index 출력은 이번 변경으로 영향받지 않음
+
+## [2026-09-07] FEATURE | Paddle 결제 후 상품 배송 (비밀 감사 페이지)
+
+- 결제 완료 시 successUrl로 비밀 감사 페이지(thank-you-bbylbimjkt0u.html)에 리다이렉트, 페이지에서 zip 다운로드
+- 다운로드 파일: docs/dl/mct-xwnxcbptip81.zip — **product/product.zip 재생성 시 이 사본도 수동 갱신 필요**
+- 감사 페이지는 noindex + 사이트 내 미링크 + sitemap 자동 제외(posts/ 기반 생성)
+- URL 난독화 기반 보호 — 슬러그 유출 시 새 슬러그로 교체, 매출 증가 시 웹훅+서버리스로 업그레이드 (스펙 참고)
