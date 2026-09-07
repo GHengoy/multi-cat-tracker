@@ -1,5 +1,13 @@
 # Operations Log
 
+## [2026-09-07] CONTENT | New post: How Many Litter Boxes for Multiple Cats
+
+- Added search-intent post targeting "how many litter boxes for multiple cats" query
+- Covers n+1 guideline, placement strategy, observable behavior signals, cleaning frequency impact
+- 918 words; all forbidden substrings avoided (diagnosis, prescribe, dosage, cures)
+- Added linked section to pillar-guide.html explaining relationship to tracking practice
+- All 10 posts pass validation; 26 unit tests pass; 14 files built
+
 ## [2026-08-21] LAUNCH | Niche A pipeline (Multi-Cat Household Health & Litter Tracking)
 
 - Selected niche: Multi-Cat Household Health & Litter Tracking (see decisions/niche-selection.md)
