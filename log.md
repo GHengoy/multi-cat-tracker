@@ -62,3 +62,11 @@
 - 다운로드 파일: docs/dl/mct-xwnxcbptip81.zip — **product/product.zip 재생성 시 이 사본도 수동 갱신 필요**
 - 감사 페이지는 noindex + 사이트 내 미링크 + sitemap 자동 제외(posts/ 기반 생성)
 - URL 난독화 기반 보호 — 슬러그 유출 시 새 슬러그로 교체, 매출 증가 시 웹훅+서버리스로 업그레이드 (스펙 참고)
+
+## [2026-10-03] SEO | Meta descriptions, canonical, Open Graph + homepage product block
+
+- Every post JSON now carries a `description`; `build_site.py` renders description/canonical/og tags via `{{HEAD_META}}` in base.html
+- `site.json` gained `title`, `description`, `og_image`; index page title is now the site name instead of "Home"
+- Added `homepage.json` (hero + $14.99 product box, Paddle checkout button) — previously the homepage had no buy button
+- `build_site.py` unified across all three niche repos (unlisted posts, homepage hero, Paddle-or-URL buy button)
+- Context: Search Console showed only the homepage indexed and sitemaps "couldn't fetch"; sitemaps resubmitted and indexing requested 2026-10-03

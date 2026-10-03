@@ -1,1 +1,6 @@
-{"base_url": "https://ghengoy.github.io/multi-cat-tracker/"}
+{
+  "base_url": "https://ghengoy.github.io/multi-cat-tracker/",
+  "title": "Multi-Cat Household Health & Litter Tracking",
+  "description": "Practical guides for tracking each cat's litter box habits, appetite, and health in a multi-cat home, plus a ready-to-use tracker spreadsheet.",
+  "og_image": "cover-600x600.png"
+}
