@@ -1,5 +1,13 @@
 # Operations Log
 
+## [2026-10-12] CONTENT | New post: How Often Should You Weigh Each Cat in a Multi-Cat Household?
+
+- Added search-intent post targeting "how often should you weigh your cat(s)" / weight-tracking queries, not previously covered by any post title
+- Covers monthly weighing schedule for healthy adults vs. every-two-weeks for kittens/seniors/at-risk cats, what percentage of weight change is worth flagging, practical weighing methods (bathroom scale, carrier subtraction), and why shared food bowls make per-cat weight tracking especially useful in multi-cat homes
+- 1003 words; all forbidden substrings avoided (diagnosis, prescribe, dosage, cures, treats your pet); ends with the standard Paddle checkout CTA
+- Added linked `<h2>` section to pillar-guide.html ("Tracking Weight Across Multiple Cats") between the seasonal/life-stage section and the FAQ section, with a back-link from the new post
+- All posts pass `validate_post.py`; site rebuilt via `build_site.py`; full unittest suite passes (35 tests)
+
 ## [2026-09-07] CONTENT | New post: How Many Litter Boxes for Multiple Cats
 
 - Added search-intent post targeting "how many litter boxes for multiple cats" query
