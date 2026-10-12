@@ -22,6 +22,12 @@
   .product-box img { max-width: 200px; display: block; margin-bottom: 1rem; }
   .buy-button { display: inline-block; background: #0a5; color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; }
   .buy-button:hover { background: #084; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
+  .product-card { display: flex; flex-direction: column; gap: 0.25rem; border: 1px solid #ddd; border-radius: 8px; padding: 0.75rem; color: #222; text-decoration: none; font-size: 0.9rem; line-height: 1.35; }
+  .product-card:hover { border-color: #0a5; }
+  .product-card img { width: 100%; height: auto; border-radius: 4px; }
+  .product-card span { color: #666; }
+  .product-card .price { color: #0a5; font-weight: bold; }
 </style>
 </head>
 <body>
@@ -37,6 +43,21 @@
 <p>A ready-to-use spreadsheet and guide for tracking each cat's daily health and litter habits.</p>
 <p><a class="buy-button" href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Get the Tracker</a></p>
 </div>
+<section class="more-products">
+<h3>More tools for multi-cat homes</h3>
+<div class="product-grid">
+<a class="product-card" href="https://kimnet8.gumroad.com/l/ktcgtx"><img src="more/multi-cat-health-dashboard-premium.jpg" alt="Multi-Cat Health Dashboard (Premium)" loading="lazy"><strong>Multi-Cat Health Dashboard (Premium)</strong><span>Auto-updating Excel &amp; Google Sheets dashboard</span><span class="price">$24.99</span></a>
+<a class="product-card" href="https://kimnet8.gumroad.com/l/egvwrr"><img src="more/multi-cat-complete-kit.jpg" alt="Multi-Cat Complete Care Records Kit" loading="lazy"><strong>Multi-Cat Complete Care Records Kit</strong><span>3 trackers: Excel &amp; Google Sheets + printable PDF</span><span class="price">$19.99</span></a>
+<a class="product-card" href="https://kimnet8.gumroad.com/l/hyqlr"><img src="more/cat-medication-vet-log.jpg" alt="Cat Medication &amp; Vet Visit Log" loading="lazy"><strong>Cat Medication &amp; Vet Visit Log</strong><span>Excel &amp; Google Sheets log + printable PDF guide</span><span class="price">$7.99</span></a>
+<a class="product-card" href="https://kimnet8.gumroad.com/l/wytgpd"><img src="more/cat-daily-check-printable.jpg" alt="Multi-Cat Weekly Daily Check Sheet" loading="lazy"><strong>Multi-Cat Weekly Daily Check Sheet</strong><span>Printable PDF — US Letter &amp; A4</span><span class="price">$5.99</span></a>
+</div>
+<h3>Have a dog too?</h3>
+<div class="product-grid">
+<a class="product-card" href="https://kimnet8.gumroad.com/l/jlihv"><img src="more/dog-health-care-tracker.jpg" alt="Dog Health &amp; Daily Care Tracker" loading="lazy"><strong>Dog Health &amp; Daily Care Tracker</strong><span>Excel &amp; Google Sheets tracker + printable PDF guide</span><span class="price">$12.99</span></a>
+<a class="product-card" href="https://kimnet8.gumroad.com/l/dzkrqn"><img src="more/dog-vaccine-vet-log.jpg" alt="Dog Vaccine &amp; Vet Record Log" loading="lazy"><strong>Dog Vaccine &amp; Vet Record Log</strong><span>Excel &amp; Google Sheets log + printable PDF guide</span><span class="price">$7.99</span></a>
+<a class="product-card" href="https://kimnet8.gumroad.com/l/kkoaqs"><img src="more/dog-daily-care-printable.jpg" alt="Dog Daily Care Weekly Checklist" loading="lazy"><strong>Dog Daily Care Weekly Checklist</strong><span>Printable PDF — US Letter &amp; A4</span><span class="price">$5.99</span></a>
+</div>
+</section>
 <h3>Latest Posts</h3>
 <ul>
 <li><a href="how-often-to-weigh-cats-multi-cat-household.html">How Often Should You Weigh Each Cat in a Multi-Cat Household?</a> — 2026-10-12</li>

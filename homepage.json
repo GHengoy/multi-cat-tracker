@@ -6,5 +6,66 @@
   "product_description": "A ready-to-use spreadsheet and guide for tracking each cat's daily health and litter habits.",
   "product_image": "cover-600x600.png",
   "paddle_price_id": "pri_01m1b583bn497kqxexe7ryx6pz",
-  "buy_label": "Get the Tracker"
+  "buy_label": "Get the Tracker",
+  "more_products": [
+    {
+      "heading": "More tools for multi-cat homes",
+      "items": [
+        {
+          "name": "Multi-Cat Health Dashboard (Premium)",
+          "price": "$24.99",
+          "blurb": "Auto-updating Excel & Google Sheets dashboard",
+          "image": "more/multi-cat-health-dashboard-premium.jpg",
+          "url": "https://kimnet8.gumroad.com/l/ktcgtx"
+        },
+        {
+          "name": "Multi-Cat Complete Care Records Kit",
+          "price": "$19.99",
+          "blurb": "3 trackers: Excel & Google Sheets + printable PDF",
+          "image": "more/multi-cat-complete-kit.jpg",
+          "url": "https://kimnet8.gumroad.com/l/egvwrr"
+        },
+        {
+          "name": "Cat Medication & Vet Visit Log",
+          "price": "$7.99",
+          "blurb": "Excel & Google Sheets log + printable PDF guide",
+          "image": "more/cat-medication-vet-log.jpg",
+          "url": "https://kimnet8.gumroad.com/l/hyqlr"
+        },
+        {
+          "name": "Multi-Cat Weekly Daily Check Sheet",
+          "price": "$5.99",
+          "blurb": "Printable PDF — US Letter & A4",
+          "image": "more/cat-daily-check-printable.jpg",
+          "url": "https://kimnet8.gumroad.com/l/wytgpd"
+        }
+      ]
+    },
+    {
+      "heading": "Have a dog too?",
+      "items": [
+        {
+          "name": "Dog Health & Daily Care Tracker",
+          "price": "$12.99",
+          "blurb": "Excel & Google Sheets tracker + printable PDF guide",
+          "image": "more/dog-health-care-tracker.jpg",
+          "url": "https://kimnet8.gumroad.com/l/jlihv"
+        },
+        {
+          "name": "Dog Vaccine & Vet Record Log",
+          "price": "$7.99",
+          "blurb": "Excel & Google Sheets log + printable PDF guide",
+          "image": "more/dog-vaccine-vet-log.jpg",
+          "url": "https://kimnet8.gumroad.com/l/dzkrqn"
+        },
+        {
+          "name": "Dog Daily Care Weekly Checklist",
+          "price": "$5.99",
+          "blurb": "Printable PDF — US Letter & A4",
+          "image": "more/dog-daily-care-printable.jpg",
+          "url": "https://kimnet8.gumroad.com/l/kkoaqs"
+        }
+      ]
+    }
+  ]
 }
