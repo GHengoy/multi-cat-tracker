@@ -10,89 +10,284 @@
 <meta property="og:title" content="How to Use the Multi-Cat Household Health &amp; Litter Tracker: Complete Walkthrough">
 <meta property="og:description" content="A column-by-column walkthrough of the Multi-Cat Household Health &amp; Litter Tracker, with example entries showing how to log each cat.">
 <meta property="og:url" content="https://ghengoy.github.io/multi-cat-tracker/how-to-use-the-tracker.html">
-<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/cover-600x600.png">
+<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/images/hero/how-to-use-the-tracker.jpg">
 <meta name="p:domain_verify" content="ed2ca7fb71cecfffeba5d895002ee1d1"/>
 <script data-goatcounter="https://ghengoy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-  a { color: #0a5; }
-  header, footer { font-size: 0.9rem; color: #666; }
-  nav a { margin-right: 1rem; }
-  .product-box { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
-  .product-box img { max-width: 200px; display: block; margin-bottom: 1rem; }
-  .buy-button { display: inline-block; background: #0a5; color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; }
-  .buy-button:hover { background: #084; }
-  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
-  .product-card { display: flex; flex-direction: column; gap: 0.25rem; border: 1px solid #ddd; border-radius: 8px; padding: 0.75rem; color: #222; text-decoration: none; font-size: 0.9rem; line-height: 1.35; }
-  .product-card:hover { border-color: #0a5; }
-  .product-card img { width: 100%; height: auto; border-radius: 4px; }
-  .product-card span { color: #666; }
-  .product-card .price { color: #0a5; font-weight: bold; }
+  :root { --accent: #2F5D62; --accent-dark: #1E3F43; --tint: #EAF2F1; --ink: #1f2328; --muted: #5d6470;
+          --line: #e4e1da; --paper: #fbfaf7; --card: #ffffff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+         font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-dark); }
+  img { max-width: 100%; height: auto; }
+  .site-header { background: var(--card); border-bottom: 1px solid var(--line); }
+  .site-header .inner { max-width: 760px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 17px; display: flex; align-items: center; gap: 10px; }
+  .brand-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); display: inline-block; position: relative; }
+  .brand-mark::after { content: ""; position: absolute; left: 7px; top: 8px; width: 14px; height: 3px; background: #fff; border-radius: 2px;
+                       box-shadow: 0 5px 0 #fff, 0 10px 0 rgba(255,255,255,.6); }
+  .site-header nav { display: flex; gap: 18px; font-size: 15px; }
+  .site-header nav a { color: var(--muted); text-decoration: none; }
+  .site-header nav a:hover { color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 56px; }
+  article > h1, main > h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.2; letter-spacing: -0.02em; margin: 8px 0 12px; }
+  h2 { font-size: 27px; line-height: 1.3; letter-spacing: -0.01em; margin: 52px 0 14px; padding-top: 6px; scroll-margin-top: 16px; }
+  h3 { font-size: 21px; line-height: 1.35; margin: 32px 0 8px; }
+  p { margin: 0 0 20px; }
+  ul, ol { padding-left: 1.3em; margin: 0 0 22px; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 650; }
+  .pillar-link { font-size: 15px; margin: 0 0 4px; }
+  .pillar-link a { text-decoration: none; }
+  .post-meta { color: var(--muted); font-size: 15px; margin: 0 0 24px; }
+  .post-hero { margin: 0 0 28px; }
+  .post-hero img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; display: block; background: var(--tint); }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  figcaption a { color: var(--muted); }
+  .toc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px 8px; margin: 0 0 32px; font-size: 16px; }
+  .toc-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .toc ol { margin: 0 0 10px; }
+  .toc li { margin-bottom: 4px; }
+  .toc a { text-decoration: none; }
+  .key-takeaways, .callout { border-radius: 12px; padding: 20px 24px 6px; margin: 0 0 30px; }
+  .key-takeaways { background: var(--tint); border-left: 5px solid var(--accent); }
+  .key-takeaways ul { margin-bottom: 14px; }
+  .box-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-dark); }
+  .callout { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--accent); }
+  .callout.note { border-left-color: #b7791f; }
+  .callout.note .box-title { color: #8a5a12; }
+  .steps { list-style: none; counter-reset: step; padding-left: 0; }
+  .steps > li { counter-increment: step; position: relative; padding-left: 52px; margin-bottom: 18px; }
+  .steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%;
+                        background: var(--accent); color: #fff; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .table-wrap { overflow-x: auto; margin: 0 0 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; font-size: 16px; line-height: 1.5; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--tint); color: var(--accent-dark); font-weight: 700; }
+  tr:last-child td { border-bottom: 0; }
+  .pin-figure { margin: 36px auto; max-width: 400px; text-align: center; }
+  .pin-figure img { border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.12); display: block; }
+  blockquote { margin: 0 0 24px; padding: 4px 0 4px 20px; border-left: 3px solid var(--line); color: var(--muted); font-style: italic; }
+  .post-cta { display: flex; gap: 24px; align-items: center; background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--accent);
+              border-radius: 14px; padding: 24px; margin: 48px 0 8px; }
+  .post-cta img { width: 150px; border-radius: 10px; flex-shrink: 0; }
+  .post-cta h3 { margin: 2px 0 6px; }
+  .post-cta p { margin-bottom: 12px; font-size: 16px; }
+  .cta-kicker { font-size: 13px !important; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 !important; }
+  .buy-button { display: inline-block; background: var(--accent); color: #fff !important; padding: 12px 22px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; }
+  .buy-button:hover { background: var(--accent-dark); }
+  .product-box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin: 24px 0 36px; display: grid; grid-template-columns: 200px 1fr; gap: 0 24px; align-items: center; }
+  .product-box img { width: 200px; border-radius: 10px; grid-row: span 3; }
+  .product-box h3 { margin: 0 0 6px; }
+  .product-box p { margin-bottom: 12px; font-size: 16px; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; margin: 12px 0 36px; }
+  .product-card { display: flex; flex-direction: column; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.4; }
+  .product-card:hover { border-color: var(--accent); }
+  .product-card img { width: 100%; border-radius: 8px; margin-bottom: 4px; }
+  .product-card span { color: var(--muted); }
+  .product-card .price { color: var(--accent); font-weight: 700; }
+  .post-list { list-style: none; padding: 0; display: grid; gap: 16px; }
+  .post-list li { margin: 0; }
+  .post-card { display: flex; gap: 18px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: var(--ink); text-decoration: none; }
+  .post-card:hover { border-color: var(--accent); }
+  .post-card img { width: 200px; object-fit: cover; flex-shrink: 0; background: var(--tint); }
+  .post-card-text { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 16px 0; }
+  .post-card-text strong { font-size: 19px; line-height: 1.35; }
+  .post-card-desc { color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .post-card-date { color: var(--muted); font-size: 13px; }
+  .site-footer { border-top: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 15px; }
+  .site-footer .inner { max-width: 760px; margin: 0 auto; padding: 28px 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .site-footer p { margin: 0; }
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    h2 { font-size: 23px; margin-top: 40px; }
+    .post-cta, .post-card { flex-direction: column; }
+    .post-cta img { width: 120px; }
+    .post-card img { width: 100%; aspect-ratio: 16 / 9; }
+    .post-card-text { padding: 0 16px 16px; }
+    .product-box { grid-template-columns: 1fr; }
+    .product-box img { grid-row: auto; margin-bottom: 12px; }
+  }
 </style>
 </head>
 <body>
-<header><nav><a href="index.html">Home</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></header>
+<header class="site-header"><div class="inner">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Multi-Cat Health</a>
+<nav><a href="index.html">Guides</a><a href="pillar-guide.html">Start here</a></nav>
+</div></header>
+<main>
 <article>
 <h1>How to Use the Multi-Cat Household Health & Litter Tracker: Complete Walkthrough</h1>
-<p class="date">2026-08-21</p>
 <p class="pillar-link"><a href="pillar-guide.html">&larr; Back to the Complete Multi-Cat Household Guide</a></p>
+<p class="post-meta"><time datetime="2026-08-21">August 21, 2026</time> &middot; 6 min read</p>
+<figure class="post-hero"><img src="images/hero/how-to-use-the-tracker.jpg" alt="Tabby cat resting on a desk beside an open laptop" width="1200" height="675"><figcaption>Photo: <a href="https://www.flickr.com/photos/53133240@N00/6251399" rel="nofollow">Muffet</a>, <a href="https://creativecommons.org/licenses/by/2.0/" rel="license nofollow">CC BY 2.0</a></figcaption></figure>
+<div class="key-takeaways">
+<p class="box-title">Key takeaways</p>
+<ul>
+<li><strong>Ready on day one:</strong> a pre-formatted spreadsheet with ten columns that works in Excel, Google Sheets or any spreadsheet app.</li>
+<li><strong>One row per cat per check:</strong> each row is one cat at one point in time, so each cat's patterns stay separate.</li>
+<li><strong>Describe, don't interpret:</strong> write what you see ("soft," "reduced," "lethargic"); your vet interprets.</li>
+<li><strong>Estimates are fine:</strong> water and food columns are for spotting patterns, not laboratory precision.</li>
+</ul>
+</div>
+<nav class="toc" aria-label="Contents"><p class="toc-title">In this guide</p>
+<ol>
+<li><a href="#a-column-by-column-guide-to-the-tracker">A Column-by-Column Guide to the Tracker</a></li>
+<li><a href="#the-tracker-s-layout-what-you-get">The Tracker's Layout: What You Get</a></li>
+<li><a href="#walking-through-each-column">Walking Through Each Column</a></li>
+<li><a href="#real-world-example">Real-World Example</a></li>
+<li><a href="#why-this-format-works">Why This Format Works</a></li>
+<li><a href="#get-started-today">Get Started Today</a></li>
+</ol></nav>
+<h2 id="a-column-by-column-guide-to-the-tracker">A Column-by-Column Guide to the Tracker</h2>
 
-<h2>Get the Most Out of Your Tracker: A Column-by-Column Guide</h2>
+<p>The Multi-Cat Household Health &amp; Litter Tracker is designed to be simple and intuitive, but it helps to understand exactly what each column is for and how to fill it in. This walkthrough explains every part, so you can start logging with confidence on day one.</p>
 
-<p>The Multi-Cat Household Health & Litter Tracker is designed to be simple and intuitive, but it helps to understand exactly what each column is for and how to fill it in. This walkthrough shows you the tracker in action and explains every part, so you can start logging your observations with confidence on day one.</p>
+<h2 id="the-tracker-s-layout-what-you-get">The Tracker's Layout: What You Get</h2>
 
-<h2>The Tracker's Layout: What You Get</h2>
+<ul>
+<li><strong>A pre-formatted spreadsheet</strong> with ten columns.</li>
+<li><strong>Example rows</strong> showing what real daily logging looks like.</li>
+<li><strong>A detailed guide.</strong></li>
+</ul>
 
-<p>When you download the tracker, you'll get a pre-formatted spreadsheet with ten columns, example rows showing what real daily logging looks like, and a detailed guide. The tracker works in Excel, Google Sheets, or any spreadsheet application. It's ready to use immediately—no setup required, no subscription, no app to install. Just download, open in your preferred spreadsheet tool, and start logging.</p>
+<p>The tracker works in Excel, Google Sheets or any spreadsheet application. There's no setup, no subscription and no app to install. Just download, open it in your preferred spreadsheet tool and start logging.</p>
 
-<h2>Walking Through Each Column</h2>
+<h2 id="walking-through-each-column">Walking Through Each Column</h2>
 
-<p><strong>Date:</strong> The calendar date of your observation. For example, "August 21, 2026" or however you prefer to format dates. This is the timestamp that organizes everything else. If you make multiple observations in a day, you might create multiple rows for the same date with different times or times in the "Notes" column.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Column</th><th>What to write</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><td>Date</td><td>The calendar date of the observation</td><td>"August 21, 2026"</td></tr>
+<tr><td>Notes</td><td>A brief time-of-day label</td><td>"Morning check," "Evening review"</td></tr>
+<tr><td>Cat Name</td><td>The specific cat, spelled the same way every time</td><td>"Whiskers," "Shadow," "Luna"</td></tr>
+<tr><td>Litter Box Visits</td><td>How many times you saw this cat use the box</td><td>"4," "2," "0 observed"</td></tr>
+<tr><td>Stool Quality</td><td>A plain description of what you saw</td><td>"normal," "soft," "loose"</td></tr>
+<tr><td>Appetite Level</td><td>How this cat ate</td><td>"normal," "reduced," "refused"</td></tr>
+<tr><td>Water Intake (ml)</td><td>An estimate of how much this cat drank</td><td>"about 100ml," "high," "low"</td></tr>
+<tr><td>Medication Given</td><td>Anything you gave this cat</td><td>"Probiotic," "None"</td></tr>
+<tr><td>Activity Level</td><td>This cat's movement and energy</td><td>"active," "normal," "lethargic"</td></tr>
+<tr><td>Behavior Notes</td><td>Anything else worth noting</td><td>"hiding more than usual"</td></tr>
+<tr><td>Food Amount (grams)</td><td>How much food you offered</td><td>"80g," "normal portion"</td></tr>
+</tbody>
+</table>
+</div>
 
-<p><strong>Notes:</strong> A brief label for context. Examples: "Morning check," "After breakfast," "Midday," "Evening review." This helps you and your veterinarian understand what time of day this observation was made and gives context for the entries. It's especially useful when reviewing with your vet, as it clarifies whether an observation is a snapshot or represents a full day of activity.</p>
+<h3>Date and Notes</h3>
 
-<p><strong>Cat Name:</strong> The name of the specific cat you're logging this observation for. This is the column that makes multi-cat tracking actually work—it isolates each cat's patterns individually. Write the cat's name (e.g., "Whiskers," "Shadow," "Luna") consistently throughout the tracker. This consistency makes it easy to search and filter your entries by individual cat later.</p>
+<p><strong>Date</strong> is the timestamp that organizes everything else; format it however you prefer. If you make several observations in a day, create multiple rows for the same date, with the time in the Notes column.</p>
 
-<p><strong>Litter Box Visits:</strong> How many times you observed this specific cat using the litter box today (or during the time period noted). Just put a number: "4," "2," "6." If you observe the same cat using the box multiple times, add them up. If you didn't see the cat use the box, you can put "0 observed" or leave it blank. This column alone often catches the first signs that something has shifted in a cat's routine.</p>
+<p><strong>Notes</strong> holds a brief label for context, such as "Morning check," "After breakfast," "Midday" or "Evening review." It tells you and your vet what time of day the observation was made, and whether it's a snapshot or represents a full day of activity.</p>
 
-<p><strong>Stool Quality:</strong> A simple description of what you observe in the litter box for this cat. Examples: "normal," "soft," "hard," "clumped," "loose." Don't interpret—just describe what you see. This is one of the most useful columns for noticing changes, and having it written down makes discussion with your veterinarian concrete and specific. Your vet can now ask, "For how many days was it like that?" and you have your tracker to refer to.</p>
+<h3>Cat Name</h3>
 
-<p><strong>Appetite Level:</strong> What you observe about how this cat is eating. Write: "normal" (ate regular portions), "reduced" (ate less than usual), "enthusiastic" (seemed very eager), or "refused" (didn't eat offered food). Again, you're describing what you see, not interpreting. This simple descriptor builds a picture of each cat's eating patterns over time.</p>
+<p>This is the column that makes multi-cat tracking actually work: it isolates each cat's patterns. Write each cat's name consistently throughout the tracker so you can easily search and filter entries by cat later.</p>
 
-<p><strong>Water Intake (ml):</strong> An approximate amount of water this cat drank if you can estimate it. You don't need to be exact—this column is for tracking patterns, not laboratory precision. You might measure by refilling a bowl and noting how much is gone, or simply estimate: "about 100ml," "normal amount," "high," "low." If you can't measure precisely, just describe what you observed compared to normal. The point is to track whether one cat is drinking more or less than usual over a week or two.</p>
+<h3>Litter Box Visits</h3>
 
-<p><strong>Medication Given:</strong> If this cat received any medication, supplement, probiotic, special food, or other item you gave them, note it here. Examples: "Thyroid pill," "Probiotic," "Special diet meal," "None," "Pain relief supplement." This column is crucial if you're managing cats on medications or dietary adjustments, because it creates a clear record of what was given and when. You can later match these entries against observations in other columns to see if there's a relationship.</p>
+<p>How many times you observed this specific cat using the litter box today, or during the period noted. Just put a number. If you see the same cat use the box several times, add them up. If you didn't see the cat use it, put "0 observed" or leave it blank. This column alone often catches the first signs that something has shifted in a cat's routine.</p>
 
-<p><strong>Activity Level:</strong> What you observe about this cat's movement and energy. Examples: "active" (playing, running, jumping), "normal" (typical movement for this cat), "lethargic" (moving less, resting more), "restless," "playful." Describe what you actually see. Some cats are naturally less active than others, so "normal" is what normal looks like for that specific cat, not compared to other cats or to some standard.</p>
+<h3>Stool Quality</h3>
 
-<p><strong>Behavior Notes:</strong> Any other observations about this cat's behavior or routine. Examples: "grooming normally," "hiding more than usual," "meowing frequently," "spending more time in sunny window," "sleeping in favorite spot," "seeking human attention," "avoiding the other cats." This column captures things that don't fit into the structured columns but are still worth noting. Write what you observe without interpretation. Your vet will interpret it.</p>
+<p>A simple description of what you observe in the litter box for this cat: "normal," "soft," "hard," "clumped," "loose." Don't interpret; just describe. This is one of the most useful columns for noticing changes. When your vet asks, "For how many days was it like that?", you have your tracker to refer to.</p>
 
-<p><strong>Food Amount (grams):</strong> The approximate amount of food (in grams) you offered this cat at meals. If you feed measured portions, just write the amount: "80g," "120g." If you feed free-choice or by eye, write a description like "normal portion" or "half usual amount." This helps track feeding consistency and can be valuable information when discussing dietary changes with your veterinarian.</p>
+<h3>Appetite Level</h3>
 
-<h2>Real-World Example</h2>
+<ul>
+<li><strong>Normal:</strong> ate regular portions</li>
+<li><strong>Reduced:</strong> ate less than usual</li>
+<li><strong>Enthusiastic:</strong> seemed very eager</li>
+<li><strong>Refused:</strong> didn't eat offered food</li>
+</ul>
 
-<p>Here's what a day might look like in your tracker. Let's say you have two cats—Whiskers and Shadow:</p>
+<p>Again, you're describing what you see, not interpreting. Over time this builds a picture of each cat's eating patterns.</p>
 
-<p><strong>Row 1:</strong> Date: August 21, Notes: Morning, Cat: Whiskers, Litter: 2, Stool: Normal, Appetite: Normal, Water: ~80ml, Medication: None, Activity: Active, Behavior: Playing with toy, Food: 100g</p>
+<h3>Water Intake (ml)</h3>
 
-<p><strong>Row 2:</strong> Date: August 21, Notes: Morning, Cat: Shadow, Litter: 1, Stool: Normal, Appetite: Normal, Water: ~60ml, Medication: None, Activity: Normal, Behavior: Resting by window, Food: 100g</p>
+<p>An approximate amount this cat drank, if you can estimate it. You might refill a bowl and note how much is gone, or simply write "about 100ml," "normal amount," "high" or "low." The point is to track whether one cat is drinking more or less than usual over a week or two.</p>
 
-<p><strong>Row 3:</strong> Date: August 21, Notes: Evening, Cat: Whiskers, Litter: 2, Stool: Normal, Appetite: Normal, Water: ~40ml, Medication: None, Activity: Normal, Behavior: Grooming, Food: 100g</p>
+<h3>Medication Given</h3>
 
-<p><strong>Row 4:</strong> Date: August 21, Notes: Evening, Cat: Shadow, Litter: 1, Stool: Normal, Appetite: Reduced, Water: Not observed, Medication: None, Activity: Lethargic, Behavior: Hiding in bedroom more, Food: 50g</p>
+<p>Note any medication, supplement, probiotic, special food or other item you gave this cat, for example "Thyroid pill," "Probiotic," "Special diet meal," "Pain relief supplement" or "None."</p>
 
-<p>One evening entry shows Shadow with reduced appetite, less activity, and spending more time hiding. On its own, this might be nothing—cats have off days. But if you continue logging and see this pattern continue into the next day or two, you suddenly have data worth bringing to your veterinarian.</p>
+<div class="callout tip">
+<p class="box-title">Why this column matters</p>
+<p>If you're managing cats on medications or dietary adjustments, this creates a clear record of what was given and when. You can later match these entries against the other columns to see if there's a relationship.</p>
+</div>
 
-<h2>Why This Format Works</h2>
+<h3>Activity Level</h3>
 
-<p>The tracker is designed so that each row represents one cat at one point in time. This makes it easy to pull together a week of observations for one cat and see if patterns emerge. It also makes it simple to share relevant sections with your veterinarian. You can print out just the rows for one cat, or just one week, to discuss specific concerns.</p>
+<p>What you observe about this cat's movement and energy: "active" (playing, running, jumping), "normal" (typical for this cat), "lethargic" (moving less, resting more), "restless," "playful." Some cats are naturally less active than others, so "normal" means normal for that specific cat, not compared to other cats or a standard.</p>
 
-<h2>Get Started Today</h2>
+<h3>Behavior Notes</h3>
 
-<p>The best way to understand the tracker is to start using it. <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Download the Multi-Cat Household Health & Litter Tracker now</a>. You'll get a pre-formatted spreadsheet with example rows already filled in (so you can see exactly how daily logging looks), a printable guide explaining every column in detail, and everything you need to start building clear records of your cats' patterns. For just $14.99, you'll have a tool that pays for itself the first time you bring it to your veterinarian with concrete data instead of vague impressions. Start tracking today and join hundreds of multi-cat owners who now have clarity instead of guessing.</p>
+<p>Anything that doesn't fit the structured columns but is still worth noting: "grooming normally," "hiding more than usual," "meowing frequently," "spending more time in sunny window," "seeking human attention," "avoiding the other cats." Write what you observe without interpretation. Your vet will interpret it.</p>
+
+<h3>Food Amount (grams)</h3>
+
+<p>The approximate amount of food you offered this cat at meals. If you feed measured portions, write the amount ("80g," "120g"). If you feed free-choice or by eye, write "normal portion" or "half usual amount." This helps track feeding consistency and is valuable when discussing dietary changes with your veterinarian.</p>
+
+<figure class="pin-figure">
+<img src="images/pins/how-to-use-the-tracker.jpg" alt="Infographic: five tips for filling in a cat health tracker" width="600" height="900" loading="lazy">
+<figcaption>Save this summary to Pinterest for later.</figcaption>
+</figure>
+
+<h2 id="real-world-example">Real-World Example</h2>
+
+<p>Here's what one day, August 21, might look like for two cats, Whiskers and Shadow:</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Column</th><th>Whiskers, morning</th><th>Shadow, morning</th><th>Whiskers, evening</th><th>Shadow, evening</th></tr></thead>
+<tbody>
+<tr><td>Litter</td><td>2</td><td>1</td><td>2</td><td>1</td></tr>
+<tr><td>Stool</td><td>Normal</td><td>Normal</td><td>Normal</td><td>Normal</td></tr>
+<tr><td>Appetite</td><td>Normal</td><td>Normal</td><td>Normal</td><td><strong>Reduced</strong></td></tr>
+<tr><td>Water</td><td>~80ml</td><td>~60ml</td><td>~40ml</td><td>Not observed</td></tr>
+<tr><td>Medication</td><td>None</td><td>None</td><td>None</td><td>None</td></tr>
+<tr><td>Activity</td><td>Active</td><td>Normal</td><td>Normal</td><td><strong>Lethargic</strong></td></tr>
+<tr><td>Behavior</td><td>Playing with toy</td><td>Resting by window</td><td>Grooming</td><td><strong>Hiding in bedroom more</strong></td></tr>
+<tr><td>Food</td><td>100g</td><td>100g</td><td>100g</td><td>50g</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout note">
+<p class="box-title">Reading the example</p>
+<p>One evening entry shows Shadow with reduced appetite, less activity and more time hiding. On its own, this might be nothing; cats have off days. But if the pattern continues into the next day or two, you suddenly have data worth bringing to your veterinarian.</p>
+</div>
+
+<h2 id="why-this-format-works">Why This Format Works</h2>
+
+<p>Each row represents one cat at one point in time. That makes it easy to:</p>
+
+<ul>
+<li><strong>Follow one cat.</strong> Pull together a week of observations for one cat and see if patterns emerge.</li>
+<li><strong>Share what's relevant.</strong> Print just the rows for one cat, or just one week, to discuss specific concerns with your veterinarian.</li>
+</ul>
+
+<h2 id="get-started-today">Get Started Today</h2>
+
+<p>The best way to understand the tracker is to start using it. <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Download the Multi-Cat Household Health &amp; Litter Tracker now</a>. You'll get a pre-formatted spreadsheet with example rows already filled in (so you can see exactly how daily logging looks), a printable guide explaining every column in detail, and everything you need to start building clear records of your cats' patterns. For just $14.99, you'll have a tool that pays for itself the first time you bring it to your veterinarian with concrete data instead of vague impressions. Start tracking today and join hundreds of multi-cat owners who now have clarity instead of guessing.</p>
+
+<aside class="post-cta">
+<img src="cover-600x600.png" alt="Multi-Cat Household Health & Litter Tracker" loading="lazy">
+<div><p class="cta-kicker">Make it easy to keep track</p>
+<h3>Multi-Cat Household Health & Litter Tracker</h3>
+<p>A ready-to-use spreadsheet and guide for tracking each cat's daily health and litter habits.</p>
+<p><a class="buy-button" href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Get the Tracker &middot; $14.99</a></p></div>
+</aside>
 
 </article>
-<footer><p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Subscribe for an email when new posts go live</a></p><p>&copy; 2026</p></footer>
+</main>
+<footer class="site-footer"><div class="inner">
+<p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Get an email when new guides go live</a></p>
+<p>&copy; 2026 SimpleTrackers &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
+</div></footer>
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
   Paddle.Initialize({ token: "live_2c65c91a22a9d6a12b1872dcedb" });

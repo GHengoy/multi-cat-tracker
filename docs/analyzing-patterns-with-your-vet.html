@@ -10,97 +10,253 @@
 <meta property="og:title" content="From Observations to Decisions: Using Your Tracker With Your Veterinarian">
 <meta property="og:description" content="Turn weeks of litter box, appetite, and behavior notes into clear patterns you can share with your vet, and know when a change is worth a visit.">
 <meta property="og:url" content="https://ghengoy.github.io/multi-cat-tracker/analyzing-patterns-with-your-vet.html">
-<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/cover-600x600.png">
+<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/images/hero/analyzing-patterns-with-your-vet.jpg">
 <meta name="p:domain_verify" content="ed2ca7fb71cecfffeba5d895002ee1d1"/>
 <script data-goatcounter="https://ghengoy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-  a { color: #0a5; }
-  header, footer { font-size: 0.9rem; color: #666; }
-  nav a { margin-right: 1rem; }
-  .product-box { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
-  .product-box img { max-width: 200px; display: block; margin-bottom: 1rem; }
-  .buy-button { display: inline-block; background: #0a5; color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; }
-  .buy-button:hover { background: #084; }
-  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
-  .product-card { display: flex; flex-direction: column; gap: 0.25rem; border: 1px solid #ddd; border-radius: 8px; padding: 0.75rem; color: #222; text-decoration: none; font-size: 0.9rem; line-height: 1.35; }
-  .product-card:hover { border-color: #0a5; }
-  .product-card img { width: 100%; height: auto; border-radius: 4px; }
-  .product-card span { color: #666; }
-  .product-card .price { color: #0a5; font-weight: bold; }
+  :root { --accent: #2F5D62; --accent-dark: #1E3F43; --tint: #EAF2F1; --ink: #1f2328; --muted: #5d6470;
+          --line: #e4e1da; --paper: #fbfaf7; --card: #ffffff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+         font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-dark); }
+  img { max-width: 100%; height: auto; }
+  .site-header { background: var(--card); border-bottom: 1px solid var(--line); }
+  .site-header .inner { max-width: 760px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 17px; display: flex; align-items: center; gap: 10px; }
+  .brand-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); display: inline-block; position: relative; }
+  .brand-mark::after { content: ""; position: absolute; left: 7px; top: 8px; width: 14px; height: 3px; background: #fff; border-radius: 2px;
+                       box-shadow: 0 5px 0 #fff, 0 10px 0 rgba(255,255,255,.6); }
+  .site-header nav { display: flex; gap: 18px; font-size: 15px; }
+  .site-header nav a { color: var(--muted); text-decoration: none; }
+  .site-header nav a:hover { color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 56px; }
+  article > h1, main > h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.2; letter-spacing: -0.02em; margin: 8px 0 12px; }
+  h2 { font-size: 27px; line-height: 1.3; letter-spacing: -0.01em; margin: 52px 0 14px; padding-top: 6px; scroll-margin-top: 16px; }
+  h3 { font-size: 21px; line-height: 1.35; margin: 32px 0 8px; }
+  p { margin: 0 0 20px; }
+  ul, ol { padding-left: 1.3em; margin: 0 0 22px; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 650; }
+  .pillar-link { font-size: 15px; margin: 0 0 4px; }
+  .pillar-link a { text-decoration: none; }
+  .post-meta { color: var(--muted); font-size: 15px; margin: 0 0 24px; }
+  .post-hero { margin: 0 0 28px; }
+  .post-hero img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; display: block; background: var(--tint); }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  figcaption a { color: var(--muted); }
+  .toc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px 8px; margin: 0 0 32px; font-size: 16px; }
+  .toc-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .toc ol { margin: 0 0 10px; }
+  .toc li { margin-bottom: 4px; }
+  .toc a { text-decoration: none; }
+  .key-takeaways, .callout { border-radius: 12px; padding: 20px 24px 6px; margin: 0 0 30px; }
+  .key-takeaways { background: var(--tint); border-left: 5px solid var(--accent); }
+  .key-takeaways ul { margin-bottom: 14px; }
+  .box-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-dark); }
+  .callout { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--accent); }
+  .callout.note { border-left-color: #b7791f; }
+  .callout.note .box-title { color: #8a5a12; }
+  .steps { list-style: none; counter-reset: step; padding-left: 0; }
+  .steps > li { counter-increment: step; position: relative; padding-left: 52px; margin-bottom: 18px; }
+  .steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%;
+                        background: var(--accent); color: #fff; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .table-wrap { overflow-x: auto; margin: 0 0 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; font-size: 16px; line-height: 1.5; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--tint); color: var(--accent-dark); font-weight: 700; }
+  tr:last-child td { border-bottom: 0; }
+  .pin-figure { margin: 36px auto; max-width: 400px; text-align: center; }
+  .pin-figure img { border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.12); display: block; }
+  blockquote { margin: 0 0 24px; padding: 4px 0 4px 20px; border-left: 3px solid var(--line); color: var(--muted); font-style: italic; }
+  .post-cta { display: flex; gap: 24px; align-items: center; background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--accent);
+              border-radius: 14px; padding: 24px; margin: 48px 0 8px; }
+  .post-cta img { width: 150px; border-radius: 10px; flex-shrink: 0; }
+  .post-cta h3 { margin: 2px 0 6px; }
+  .post-cta p { margin-bottom: 12px; font-size: 16px; }
+  .cta-kicker { font-size: 13px !important; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 !important; }
+  .buy-button { display: inline-block; background: var(--accent); color: #fff !important; padding: 12px 22px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; }
+  .buy-button:hover { background: var(--accent-dark); }
+  .product-box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin: 24px 0 36px; display: grid; grid-template-columns: 200px 1fr; gap: 0 24px; align-items: center; }
+  .product-box img { width: 200px; border-radius: 10px; grid-row: span 3; }
+  .product-box h3 { margin: 0 0 6px; }
+  .product-box p { margin-bottom: 12px; font-size: 16px; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; margin: 12px 0 36px; }
+  .product-card { display: flex; flex-direction: column; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.4; }
+  .product-card:hover { border-color: var(--accent); }
+  .product-card img { width: 100%; border-radius: 8px; margin-bottom: 4px; }
+  .product-card span { color: var(--muted); }
+  .product-card .price { color: var(--accent); font-weight: 700; }
+  .post-list { list-style: none; padding: 0; display: grid; gap: 16px; }
+  .post-list li { margin: 0; }
+  .post-card { display: flex; gap: 18px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: var(--ink); text-decoration: none; }
+  .post-card:hover { border-color: var(--accent); }
+  .post-card img { width: 200px; object-fit: cover; flex-shrink: 0; background: var(--tint); }
+  .post-card-text { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 16px 0; }
+  .post-card-text strong { font-size: 19px; line-height: 1.35; }
+  .post-card-desc { color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .post-card-date { color: var(--muted); font-size: 13px; }
+  .site-footer { border-top: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 15px; }
+  .site-footer .inner { max-width: 760px; margin: 0 auto; padding: 28px 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .site-footer p { margin: 0; }
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    h2 { font-size: 23px; margin-top: 40px; }
+    .post-cta, .post-card { flex-direction: column; }
+    .post-cta img { width: 120px; }
+    .post-card img { width: 100%; aspect-ratio: 16 / 9; }
+    .post-card-text { padding: 0 16px 16px; }
+    .product-box { grid-template-columns: 1fr; }
+    .product-box img { grid-row: auto; margin-bottom: 12px; }
+  }
 </style>
 </head>
 <body>
-<header><nav><a href="index.html">Home</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></header>
+<header class="site-header"><div class="inner">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Multi-Cat Health</a>
+<nav><a href="index.html">Guides</a><a href="pillar-guide.html">Start here</a></nav>
+</div></header>
+<main>
 <article>
 <h1>From Observations to Decisions: Using Your Tracker With Your Veterinarian</h1>
-<p class="date">2026-08-21</p>
 <p class="pillar-link"><a href="pillar-guide.html">&larr; Back to the Complete Multi-Cat Household Guide</a></p>
+<p class="post-meta"><time datetime="2026-08-21">August 21, 2026</time> &middot; 6 min read</p>
+<figure class="post-hero"><img src="images/hero/analyzing-patterns-with-your-vet.jpg" alt="Cat Vet clinic sign with a cat silhouette on top against the sky" width="1200" height="675"><figcaption>Photo: <a href="https://www.flickr.com/photos/28713775@N02/11141125593" rel="nofollow">Newtown grafitti</a>, <a href="https://creativecommons.org/licenses/by/2.0/" rel="license nofollow">CC BY 2.0</a></figcaption></figure>
+<div class="key-takeaways">
+<p class="box-title">Key takeaways</p>
+<ul>
+<li><strong>Patterns, not blips:</strong> look for changes that persist, repeat, happen together or clearly depart from a cat's baseline.</li>
+<li><strong>Review on a schedule:</strong> every week or two, read back what you wrote without interpreting it.</li>
+<li><strong>Bring the data:</strong> show your vet the actual tracker or a printout, state the pattern as facts and add context.</li>
+<li><strong>Let your vet interpret:</strong> your expertise is documenting; theirs is explaining what it means.</li>
+<li><strong>Don't wait for a problem:</strong> sharing baselines at wellness visits pays off later.</li>
+</ul>
+</div>
+<nav class="toc" aria-label="Contents"><p class="toc-title">In this guide</p>
+<ol>
+<li><a href="#your-observations-are-valuable-data-for-your-vet">Your Observations Are Valuable Data for Your Vet</a></li>
+<li><a href="#patterns-vs-noise-what-s-worth-watching">Patterns vs. Noise: What's Worth Watching</a></li>
+<li><a href="#reviewing-your-data-objectively">Reviewing Your Data Objectively</a></li>
+<li><a href="#preparing-to-discuss-patterns-with-your-vet">Preparing to Discuss Patterns With Your Vet</a></li>
+<li><a href="#what-your-vet-can-do-with-your-data">What Your Vet Can Do With Your Data</a></li>
+<li><a href="#bring-your-tracker-even-without-a-specific-concern">Bring Your Tracker Even Without a Specific Concern</a></li>
+<li><a href="#remember-you-re-a-team">Remember: You're a Team</a></li>
+</ol></nav>
+<h2 id="your-observations-are-valuable-data-for-your-vet">Your Observations Are Valuable Data for Your Vet</h2>
 
-<h2>Your Observations Are Valuable Data for Your Vet—Here's How to Share Them</h2>
+<p>After a few weeks of tracking, you'll start to notice patterns:</p>
 
-<p>After you've been tracking for a few weeks, you'll start to notice patterns in your observations. Maybe one cat's litter box visits decreased from five per day to two over a few days. Maybe another cat's appetite has been lower than usual for a week. Maybe you notice that activity level shifts every time you change the brand of food. These patterns are exactly what makes tracking valuable—but noticing a pattern is just the first step. The real power comes from using those observations in conversation with your veterinarian.</p>
+<ul>
+<li>One cat's litter box visits dropped from five per day to two over a few days.</li>
+<li>Another cat's appetite has been lower than usual for a week.</li>
+<li>Activity level shifts every time you change the brand of food.</li>
+</ul>
 
-<p>This post is about how to think about your observations, how to identify meaningful patterns, and most importantly, how to present them to your vet so they can use your data to help your cats.</p>
+<p>These patterns are exactly what makes tracking valuable. But noticing a pattern is just the first step. The real power comes from using those observations in conversation with your veterinarian.</p>
 
-<h2>Patterns vs. Noise: What's Worth Watching</h2>
+<p>This post covers how to think about your observations, how to identify meaningful patterns and, most importantly, how to present them to your vet so they can use your data to help your cats.</p>
 
-<p>When you start accumulating tracking data, not every shift is a pattern worth discussing. A cat eating a bit less one day might simply mean they weren't hungry that day. One slightly different litter box visit count could be nothing. Part of tracking is learning to distinguish between normal day-to-day variation and actual changes that persist or repeat over time.</p>
+<h2 id="patterns-vs-noise-what-s-worth-watching">Patterns vs. Noise: What's Worth Watching</h2>
 
-<p>A true pattern usually involves one of these characteristics:</p>
+<p>Not every shift is a pattern worth discussing. A cat eating a bit less one day might simply not have been hungry. One slightly different litter box count could be nothing. Part of tracking is learning to tell normal day-to-day variation from changes that persist or repeat.</p>
 
-<p><strong>Persistence:</strong> A change that lasts for multiple days or repeats consistently. One day of reduced appetite is probably nothing. Three days of reduced appetite is a pattern. Five days of consistently lower appetite is definitely a pattern worth noting.</p>
+<p>A true pattern usually has one of these characteristics:</p>
 
-<p><strong>Consistency:</strong> A change that happens the same way repeatedly. Litter box visits are consistently lower than baseline over a week. Activity level is noticeably lower every day this week compared to last week. When you see consistency, you're seeing a pattern.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Sign</th><th>What it looks like</th></tr></thead>
+<tbody>
+<tr><td><strong>Persistence</strong></td><td>A change that lasts several days or repeats. One day of reduced appetite is probably nothing. Three days is a pattern. Five days of consistently lower appetite is definitely worth noting.</td></tr>
+<tr><td><strong>Consistency</strong></td><td>A change that happens the same way repeatedly, such as litter box visits consistently below baseline over a week, or activity noticeably lower every day this week than last.</td></tr>
+<tr><td><strong>Multiple simultaneous changes</strong></td><td>Several observations shifting together, like reduced appetite, lower activity and more hiding in the same week. Isolated changes are often nothing; coordinated changes are more notable.</td></tr>
+<tr><td><strong>Change from baseline</strong></td><td>A clear, consistent departure from the cat's own normal pattern. This is why the baseline from your first few weeks matters: it lets you recognize deviation.</td></tr>
+</tbody>
+</table>
+</div>
 
-<p><strong>Multiple Simultaneous Changes:</strong> When several observations shift together, that's worth noting. For example: reduced appetite, lower activity level, and more time hiding—all in the same week. Isolated changes are often nothing; multiple coordinated changes are more notable.</p>
+<h2 id="reviewing-your-data-objectively">Reviewing Your Data Objectively</h2>
 
-<p><strong>Change From Baseline:</strong> Remember that baseline you established in your first few weeks of tracking? When a cat deviates clearly and consistently from their own normal pattern, that's a pattern. This is why baseline is so important—it lets you recognize deviation when it happens.</p>
+<p>Once a week or every two weeks, spend a few minutes reviewing the past week's entries for each cat.</p>
 
-<h2>Reviewing Your Data Objectively</h2>
+<ol class="steps">
+<li><strong>Read without interpreting.</strong> Just read what you wrote.</li>
+<li><strong>Compare with previous weeks.</strong> Did anything shift? Did any observations cluster in a way that stands out?</li>
+<li><strong>Write a short summary.</strong> For example: "Week of Aug 15: Whiskers' litter box visits down from 5 daily to 2&ndash;3. Appetite reduced. Otherwise normal." You're not interpreting yet, just noting what the data shows.</li>
+</ol>
 
-<p>Once a week or every two weeks, spend a few minutes reviewing the past week's entries for each cat. Look at the data without interpretation. Just read what you wrote. Did you notice any shifts from the previous weeks? Did any observations cluster in a way that stood out to you?</p>
+<p>This review helps you separate things that seemed notable in the moment from patterns that actually stand out in accumulated data. Something that felt like a big deal may turn out to be an isolated blip. Something that seemed minor may reveal itself as part of a larger pattern.</p>
 
-<p>Write these observations down: "Week of Aug 15: Whiskers' litter box visits down from 5 daily to 2-3. Appetite reduced. Otherwise normal." You're not interpreting this yet. You're just noting what the data shows.</p>
-
-<p>This review process is important because it helps you distinguish between things that seemed notable in the moment versus patterns that actually stand out when you look at accumulated data. You might think something is a big deal when it happens, but reviewing the week shows it was an isolated blip. Conversely, something that seemed minor might reveal itself as part of a larger pattern when you see it alongside other observations.</p>
-
-<h2>Preparing to Discuss Patterns With Your Vet</h2>
+<h2 id="preparing-to-discuss-patterns-with-your-vet">Preparing to Discuss Patterns With Your Vet</h2>
 
 <p>When you notice a pattern worth discussing, bring it to your vet. Here's how to present it effectively:</p>
 
-<p><strong>Bring the actual tracker or relevant printout.</strong> Don't try to rely on memory or a verbal summary. Show your vet the data. If you're using a spreadsheet tracker, you can print out just the rows for one cat, or just one week, to focus the discussion. This gives your vet concrete information to work with rather than impressions.</p>
+<ol class="steps">
+<li><strong>Bring the actual tracker or a printout.</strong> Don't rely on memory or a verbal summary. With a spreadsheet tracker, you can print just the rows for one cat, or just one week, to focus the discussion.</li>
+<li><strong>Point out the specific pattern.</strong> "Over the week of August 15&ndash;21, Whiskers' litter box visits dropped from an average of five per day to two or three. Appetite has also been reduced during this period." State facts from your log.</li>
+<li><strong>Provide context.</strong> Did you switch food brands? Start a new medication? Has the cat been under stress from new pets, a move or household changes?</li>
+<li><strong>Let your vet interpret.</strong> Your vet is trained to interpret what changes in appetite, activity, bathroom habits and behavior mean. Your expertise is accurately documenting what you observe.</li>
+</ol>
 
-<p><strong>Point out the specific pattern.</strong> "Over the week of August 15–21, Whiskers' litter box visits dropped from an average of five per day to two or three per day. Appetite has also been reduced during this same period." You're stating facts from your observation log, not interpreting.</p>
+<figure class="pin-figure">
+<img src="images/pins/analyzing-patterns-with-your-vet.jpg" alt="Infographic: five steps for sharing cat patterns with your vet" width="600" height="900" loading="lazy">
+<figcaption>Save this summary to Pinterest for later.</figcaption>
+</figure>
 
-<p><strong>Provide context.</strong> Has anything else changed? Did you switch food brands? Start a new medication? Has the cat been under stress (new pets, moves, household changes)? Your vet can use this context to help understand what your observations mean.</p>
+<div class="callout tip">
+<p class="box-title">What to say</p>
+<p>"I've been tracking Whiskers for two months. Here's the pattern I'm seeing in the last week. Can you help me understand what this means?" This frames the conversation correctly: you share observations, your vet provides interpretation and guidance.</p>
+</div>
 
-<p><strong>Let your vet interpret.</strong> Present the pattern and ask your vet to help you understand it. Your vet is trained to interpret what changes in appetite, activity, bathroom habits, and behavior actually mean. That's their expertise. Your expertise is accurately documenting what you observe. This division of labor works.</p>
+<h2 id="what-your-vet-can-do-with-your-data">What Your Vet Can Do With Your Data</h2>
 
-<p>You might say: "I've been tracking Whiskers for two months. Here's the pattern I'm seeing in the last week. Can you help me understand what this means?" This frames the conversation correctly—you're sharing observations, your vet is providing interpretation and guidance.</p>
+<p>A well-documented tracker gives your vet several advantages:</p>
 
-<h2>What Your Vet Can Do With Your Data</h2>
+<ul>
+<li><strong>A real timeline.</strong> They see when changes happened rather than relying on what you remember from a few weeks ago.</li>
+<li><strong>Connections across observations.</strong> A relationship may not be obvious in any single observation, but your vet's training helps them spot it.</li>
+<li><strong>Better-informed decisions.</strong> They work from actual data rather than impressions.</li>
+</ul>
 
-<p>When you bring a well-documented tracker to your vet, they gain several advantages. They can see the timeline of changes rather than relying on what you remember from a few weeks ago. They can identify patterns across multiple observations—maybe there's a relationship between your tracking data that isn't obvious in any single observation, but your vet's training helps them spot it. They can make more informed decisions because they have actual data rather than impressions.</p>
+<p>Most importantly, your tracker lets your vet rule things in and out. If your vet reviews the data and says, "Actually, this is within normal range for this cat," that's valuable too: you stop worrying about something that isn't a concern. If a pattern is worth investigating further, your vet can recommend next steps based on what the data shows.</p>
 
-<p>Most importantly, your tracker lets your vet rule things in and out. If you bring a pattern and your vet reviews your data and says, "Actually, this is within normal range for this cat," that's valuable too. You stop worrying about something that isn't actually a concern. If a pattern is worth investigating further, your vet can recommend next steps based on what the data actually shows.</p>
+<h2 id="bring-your-tracker-even-without-a-specific-concern">Bring Your Tracker Even Without a Specific Concern</h2>
 
-<h2>When to Bring Your Tracker to Your Vet (Even Without a Specific Concern)</h2>
+<p>You don't need to wait for a problem. Many cat owners bring their tracker to regular wellness visits, even when nothing seems wrong. Your vet can review a month or two of observations and note each cat's baseline. If something shifts later, you'll both have that baseline to compare to.</p>
 
-<p>You don't need to wait for a problem to bring your tracker to your vet. Many cat owners find it valuable to bring their tracker to regular wellness visits, even when nothing seems obviously wrong. Your vet can review a month or two of observations and note your cats' baselines. This becomes valuable later—if something does shift, both you and your vet will have that baseline to compare to.</p>
+<div class="callout tip">
+<p class="box-title">Especially useful in multi-cat homes</p>
+<p>Some vets particularly appreciate this for multi-cat households, because it clearly separates each cat's patterns. Instead of "One of my cats seems off," you can say "Here's each cat's pattern. Cat A is doing this; Cat B is doing this. Which one concerns you?"</p>
+</div>
 
-<p>Some vets particularly appreciate this for multi-cat households, because it clearly separates each cat's individual patterns. Rather than saying "One of my cats seems off," you can say "Here's each cat's pattern. Cat A is doing this; Cat B is doing this. Which one concerns you?" Your vet can then focus on the relevant data.</p>
+<h2 id="remember-you-re-a-team">Remember: You're a Team</h2>
 
-<h2>Remember: You're a Team</h2>
+<p>Your cats' health is best served when you and your vet work as a team:</p>
 
-<p>The most effective approach to your cats' health is when you and your vet work as a team. You provide detailed observations over time. Your vet provides expert interpretation of what those observations mean. Your tracker makes this collaboration much stronger by giving your vet concrete data to work with instead of impressions. Together, you can catch patterns earlier, make better decisions, and keep your multi-cat household healthy.</p>
+<ul>
+<li><strong>You</strong> know your cats and provide detailed observations over time.</li>
+<li><strong>Your vet</strong> is the expert on interpreting health information and provides expert interpretation of those observations.</li>
+</ul>
 
-<p>Your vet is the expert on interpreting health information. Your expertise is knowing your cats and documenting what you observe. That combination—clear observations from a dedicated owner plus expert interpretation from a trained veterinarian—is powerful.</p>
+<p>Your tracker makes this collaboration stronger by giving your vet concrete data instead of impressions. Together, you can catch patterns earlier, make better decisions and keep your multi-cat household healthy. That combination of clear observations from a dedicated owner and expert interpretation from a trained veterinarian is powerful.</p>
 
-<p>Start building that data now. <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Download the Multi-Cat Household Health & Litter Tracker</a> and begin creating the timeline of observations that will help you and your vet care for each cat more effectively. Tracking takes just minutes a day, and the data you collect becomes invaluable when you need to discuss your cats' health or changes in their patterns with your veterinarian.</p>
+<p>Start building that data now. <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Download the Multi-Cat Household Health &amp; Litter Tracker</a> and begin creating the timeline of observations that will help you and your vet care for each cat more effectively. Tracking takes just minutes a day, and the data you collect becomes invaluable when you need to discuss your cats' health or changes in their patterns with your veterinarian.</p>
+
+<aside class="post-cta">
+<img src="cover-600x600.png" alt="Multi-Cat Household Health & Litter Tracker" loading="lazy">
+<div><p class="cta-kicker">Make it easy to keep track</p>
+<h3>Multi-Cat Household Health & Litter Tracker</h3>
+<p>A ready-to-use spreadsheet and guide for tracking each cat's daily health and litter habits.</p>
+<p><a class="buy-button" href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Get the Tracker &middot; $14.99</a></p></div>
+</aside>
 
 </article>
-<footer><p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Subscribe for an email when new posts go live</a></p><p>&copy; 2026</p></footer>
+</main>
+<footer class="site-footer"><div class="inner">
+<p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Get an email when new guides go live</a></p>
+<p>&copy; 2026 SimpleTrackers &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
+</div></footer>
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
   Paddle.Initialize({ token: "live_2c65c91a22a9d6a12b1872dcedb" });

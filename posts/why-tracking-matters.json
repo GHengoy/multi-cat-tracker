@@ -1,1 +1,13 @@
-{"title": "Why Tracking Your Multi-Cat Household Really Matters", "date": "2026-08-21", "description": "Can't tell which cat is off their food or skipping the litter box? Why tracking each cat in a multi-cat home catches health problems earlier."}
+{
+  "title": "Why Tracking Your Multi-Cat Household Really Matters",
+  "date": "2026-08-21",
+  "description": "Can't tell which cat is off their food or skipping the litter box? Why tracking each cat in a multi-cat home catches health problems earlier.",
+  "hero": {
+    "src": "images/hero/why-tracking-matters.jpg",
+    "alt": "A grey cat and a tabby-and-white cat lying side by side on a rug",
+    "credit": "foxypar4",
+    "credit_url": "https://www.flickr.com/photos/43145783@N00/2056140825",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
+  }
+}

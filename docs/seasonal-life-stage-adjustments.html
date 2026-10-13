@@ -10,89 +10,250 @@
 <meta property="og:title" content="Adjusting What You Track: Seasonal Changes and Life Stages">
 <meta property="og:description" content="What normal looks like for your cats shifts with seasons and age. Learn how to adjust what you track for kittens, seniors, and seasonal changes.">
 <meta property="og:url" content="https://ghengoy.github.io/multi-cat-tracker/seasonal-life-stage-adjustments.html">
-<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/cover-600x600.png">
+<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/images/hero/seasonal-life-stage-adjustments.jpg">
 <meta name="p:domain_verify" content="ed2ca7fb71cecfffeba5d895002ee1d1"/>
 <script data-goatcounter="https://ghengoy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-  a { color: #0a5; }
-  header, footer { font-size: 0.9rem; color: #666; }
-  nav a { margin-right: 1rem; }
-  .product-box { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
-  .product-box img { max-width: 200px; display: block; margin-bottom: 1rem; }
-  .buy-button { display: inline-block; background: #0a5; color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; }
-  .buy-button:hover { background: #084; }
-  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
-  .product-card { display: flex; flex-direction: column; gap: 0.25rem; border: 1px solid #ddd; border-radius: 8px; padding: 0.75rem; color: #222; text-decoration: none; font-size: 0.9rem; line-height: 1.35; }
-  .product-card:hover { border-color: #0a5; }
-  .product-card img { width: 100%; height: auto; border-radius: 4px; }
-  .product-card span { color: #666; }
-  .product-card .price { color: #0a5; font-weight: bold; }
+  :root { --accent: #2F5D62; --accent-dark: #1E3F43; --tint: #EAF2F1; --ink: #1f2328; --muted: #5d6470;
+          --line: #e4e1da; --paper: #fbfaf7; --card: #ffffff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+         font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-dark); }
+  img { max-width: 100%; height: auto; }
+  .site-header { background: var(--card); border-bottom: 1px solid var(--line); }
+  .site-header .inner { max-width: 760px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 17px; display: flex; align-items: center; gap: 10px; }
+  .brand-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); display: inline-block; position: relative; }
+  .brand-mark::after { content: ""; position: absolute; left: 7px; top: 8px; width: 14px; height: 3px; background: #fff; border-radius: 2px;
+                       box-shadow: 0 5px 0 #fff, 0 10px 0 rgba(255,255,255,.6); }
+  .site-header nav { display: flex; gap: 18px; font-size: 15px; }
+  .site-header nav a { color: var(--muted); text-decoration: none; }
+  .site-header nav a:hover { color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 56px; }
+  article > h1, main > h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.2; letter-spacing: -0.02em; margin: 8px 0 12px; }
+  h2 { font-size: 27px; line-height: 1.3; letter-spacing: -0.01em; margin: 52px 0 14px; padding-top: 6px; scroll-margin-top: 16px; }
+  h3 { font-size: 21px; line-height: 1.35; margin: 32px 0 8px; }
+  p { margin: 0 0 20px; }
+  ul, ol { padding-left: 1.3em; margin: 0 0 22px; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 650; }
+  .pillar-link { font-size: 15px; margin: 0 0 4px; }
+  .pillar-link a { text-decoration: none; }
+  .post-meta { color: var(--muted); font-size: 15px; margin: 0 0 24px; }
+  .post-hero { margin: 0 0 28px; }
+  .post-hero img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; display: block; background: var(--tint); }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  figcaption a { color: var(--muted); }
+  .toc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px 8px; margin: 0 0 32px; font-size: 16px; }
+  .toc-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .toc ol { margin: 0 0 10px; }
+  .toc li { margin-bottom: 4px; }
+  .toc a { text-decoration: none; }
+  .key-takeaways, .callout { border-radius: 12px; padding: 20px 24px 6px; margin: 0 0 30px; }
+  .key-takeaways { background: var(--tint); border-left: 5px solid var(--accent); }
+  .key-takeaways ul { margin-bottom: 14px; }
+  .box-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-dark); }
+  .callout { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--accent); }
+  .callout.note { border-left-color: #b7791f; }
+  .callout.note .box-title { color: #8a5a12; }
+  .steps { list-style: none; counter-reset: step; padding-left: 0; }
+  .steps > li { counter-increment: step; position: relative; padding-left: 52px; margin-bottom: 18px; }
+  .steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%;
+                        background: var(--accent); color: #fff; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .table-wrap { overflow-x: auto; margin: 0 0 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; font-size: 16px; line-height: 1.5; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--tint); color: var(--accent-dark); font-weight: 700; }
+  tr:last-child td { border-bottom: 0; }
+  .pin-figure { margin: 36px auto; max-width: 400px; text-align: center; }
+  .pin-figure img { border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.12); display: block; }
+  blockquote { margin: 0 0 24px; padding: 4px 0 4px 20px; border-left: 3px solid var(--line); color: var(--muted); font-style: italic; }
+  .post-cta { display: flex; gap: 24px; align-items: center; background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--accent);
+              border-radius: 14px; padding: 24px; margin: 48px 0 8px; }
+  .post-cta img { width: 150px; border-radius: 10px; flex-shrink: 0; }
+  .post-cta h3 { margin: 2px 0 6px; }
+  .post-cta p { margin-bottom: 12px; font-size: 16px; }
+  .cta-kicker { font-size: 13px !important; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 !important; }
+  .buy-button { display: inline-block; background: var(--accent); color: #fff !important; padding: 12px 22px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; }
+  .buy-button:hover { background: var(--accent-dark); }
+  .product-box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin: 24px 0 36px; display: grid; grid-template-columns: 200px 1fr; gap: 0 24px; align-items: center; }
+  .product-box img { width: 200px; border-radius: 10px; grid-row: span 3; }
+  .product-box h3 { margin: 0 0 6px; }
+  .product-box p { margin-bottom: 12px; font-size: 16px; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; margin: 12px 0 36px; }
+  .product-card { display: flex; flex-direction: column; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.4; }
+  .product-card:hover { border-color: var(--accent); }
+  .product-card img { width: 100%; border-radius: 8px; margin-bottom: 4px; }
+  .product-card span { color: var(--muted); }
+  .product-card .price { color: var(--accent); font-weight: 700; }
+  .post-list { list-style: none; padding: 0; display: grid; gap: 16px; }
+  .post-list li { margin: 0; }
+  .post-card { display: flex; gap: 18px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: var(--ink); text-decoration: none; }
+  .post-card:hover { border-color: var(--accent); }
+  .post-card img { width: 200px; object-fit: cover; flex-shrink: 0; background: var(--tint); }
+  .post-card-text { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 16px 0; }
+  .post-card-text strong { font-size: 19px; line-height: 1.35; }
+  .post-card-desc { color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .post-card-date { color: var(--muted); font-size: 13px; }
+  .site-footer { border-top: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 15px; }
+  .site-footer .inner { max-width: 760px; margin: 0 auto; padding: 28px 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .site-footer p { margin: 0; }
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    h2 { font-size: 23px; margin-top: 40px; }
+    .post-cta, .post-card { flex-direction: column; }
+    .post-cta img { width: 120px; }
+    .post-card img { width: 100%; aspect-ratio: 16 / 9; }
+    .post-card-text { padding: 0 16px 16px; }
+    .product-box { grid-template-columns: 1fr; }
+    .product-box img { grid-row: auto; margin-bottom: 12px; }
+  }
 </style>
 </head>
 <body>
-<header><nav><a href="index.html">Home</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></header>
+<header class="site-header"><div class="inner">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Multi-Cat Health</a>
+<nav><a href="index.html">Guides</a><a href="pillar-guide.html">Start here</a></nav>
+</div></header>
+<main>
 <article>
 <h1>Adjusting What You Track: Seasonal Changes and Life Stages</h1>
-<p class="date">2026-08-21</p>
 <p class="pillar-link"><a href="pillar-guide.html">&larr; Back to the Complete Multi-Cat Household Guide</a></p>
+<p class="post-meta"><time datetime="2026-08-21">August 21, 2026</time> &middot; 5 min read</p>
+<figure class="post-hero"><img src="images/hero/seasonal-life-stage-adjustments.jpg" alt="Siamese cat watching wintry weather through a window" width="1200" height="675"><figcaption>Photo: <a href="https://www.flickr.com/photos/35237093637@N01/101887638" rel="nofollow">emdot</a>, <a href="https://creativecommons.org/licenses/by/2.0/" rel="license nofollow">CC BY 2.0</a></figcaption></figure>
+<div class="key-takeaways">
+<p class="box-title">Key takeaways</p>
+<ul>
+<li><strong>Normal shifts over time:</strong> seasons, aging and life stages all change what "normal" looks like for each cat.</li>
+<li><strong>Note the season:</strong> a quick line in the Notes column gives you and your vet seasonal context.</li>
+<li><strong>Use age-appropriate baselines:</strong> a senior resting more is expected; track changes from their own senior baseline.</li>
+<li><strong>Mark life events with a date:</strong> diet changes, new medications, new cats and moves turn your log into a timeline.</li>
+<li><strong>Compare year to year:</strong> after twelve months, a short annual summary makes seasonal comparison easy.</li>
+</ul>
+</div>
+<nav class="toc" aria-label="Contents"><p class="toc-title">In this guide</p>
+<ol>
+<li><a href="#your-cats-change-with-the-seasons-and-with-age-your-tracking-should-too">Your Cats Change With the Seasons and With Age. Your Tracking Should Too</a></li>
+<li><a href="#seasonal-changes-more-than-just-winter-fluff">Seasonal Changes: More Than Just Winter Fluff</a></li>
+<li><a href="#life-stages-kittens-adults-and-senior-cats">Life Stages: Kittens, Adults and Senior Cats</a></li>
+<li><a href="#life-events-diet-changes-new-cats-moves-and-more">Life Events: Diet Changes, New Cats, Moves and More</a></li>
+<li><a href="#annual-baselines-comparing-year-to-year">Annual Baselines: Comparing Year to Year</a></li>
+<li><a href="#keep-tracking-simple-while-staying-responsive">Keep Tracking Simple While Staying Responsive</a></li>
+</ol></nav>
+<h2 id="your-cats-change-with-the-seasons-and-with-age-your-tracking-should-too">Your Cats Change With the Seasons and With Age. Your Tracking Should Too</h2>
 
-<h2>Your Cats Change With the Seasons and as They Age—Your Tracking Should Too</h2>
+<p>After a few weeks of tracking, you'll start to see what "normal" looks like for each cat. But normal isn't constant.</p>
 
-<p>Once you've been tracking your cats for a few weeks, you'll start to notice what "normal" looks like for each individual animal. But normal isn't constant. As seasons change, as your cats age, and as they move through different life stages, what normal looks like shifts. A good tracking practice adapts to these shifts rather than treating the baseline from three months ago as the standard forever.</p>
+<p>As seasons change, as your cats age and as they move through different life stages, normal shifts. A good tracking practice adapts to these shifts rather than treating the baseline from three months ago as the standard forever.</p>
 
-<h2>Seasonal Changes: More Than Just Winter Fluff</h2>
+<h2 id="seasonal-changes-more-than-just-winter-fluff">Seasonal Changes: More Than Just Winter Fluff</h2>
 
-<p>Most people know that cats tend to eat slightly more and grow thicker coats heading into colder months. But seasonal changes affect more than just appearance. Activity levels often shift. Indoor cats might become less active in winter when it's dark more of the day. Outdoor or cat-accessible spaces might mean cats spend more time outside in warm months and more time inside in cold months, changing when and how often you observe them.</p>
+<p>Most people know cats tend to eat slightly more and grow thicker coats heading into colder months. But seasonal changes affect more than appearance:</p>
 
-<p>Water intake sometimes changes seasonally too. In hot months, cats drink more. In cold months, some cats drink less (which is actually worth paying attention to, because consistent low water intake can become a concern). Appetite can shift slightly, and some cats become more social or more solitary depending on the season.</p>
+<ul>
+<li><strong>Activity.</strong> Indoor cats might become less active in winter, when it's dark more of the day.</li>
+<li><strong>Time outdoors.</strong> Cats with outdoor or cat-accessible spaces might spend more time outside in warm months and inside in cold months, changing when and how often you observe them.</li>
+<li><strong>Water intake.</strong> In hot months, cats drink more. In cold months, some cats drink less.</li>
+<li><strong>Appetite and sociability.</strong> Appetite can shift slightly, and some cats become more social or more solitary depending on the season.</li>
+</ul>
 
-<p><strong>How to adjust your tracking:</strong> Rather than trying to compare a winter day in January to an August day using the exact same baseline, note the season in your "Notes" column when relevant. "Winter, very dark day" or "Summer, unusually hot." This reminds you and your vet that seasonal context matters. You might lower your alert threshold for what's "different" in winter (since some changes are normal) while staying attuned to actual shifts that persist despite seasonal influence.</p>
+<div class="callout note">
+<p class="box-title">Watch low water intake</p>
+<p>Lower drinking in cold months is worth paying attention to, because consistently low water intake can become a concern.</p>
+</div>
 
-<p>If your cats spend time outdoors or have variable access to outdoor spaces, note that in your observations too. "Spent most of day outside" or "Indoor only today (weather)" provides context that helps you distinguish between changes worth watching and normal variation due to seasonal routines.</p>
+<h3>How to adjust your tracking</h3>
 
-<h2>Life Stages: Kittens, Adults, and Senior Cats</h2>
+<p>Rather than comparing a January day to an August day using the same baseline, note the season in your Notes column when relevant, for example "Winter, very dark day" or "Summer, unusually hot." This reminds you and your vet that seasonal context matters.</p>
 
-<p>The needs, behaviors, and patterns of a young kitten are completely different from an adult cat, which are different again from a senior. A good tracking practice acknowledges these stages rather than expecting an eight-year-old cat to have the activity level of a two-year-old.</p>
+<p>You might lower your alert threshold for what's "different" in winter, since some changes are normal, while staying attuned to shifts that persist despite seasonal influence. If your cats have variable outdoor access, note that too: "Spent most of day outside" or "Indoor only today (weather)." That context helps you tell changes worth watching from normal seasonal variation.</p>
 
-<p><strong>Kittens (Under 1 year):</strong> Kittens are naturally very active and eat more frequently in smaller portions. Their litter box visits are often more frequent than adults. Appetite is typically enthusiastic and frequent. You might adjust your "normal" baseline expectations for activity level and appetite accordingly. What looks like "high activity" is actually normal for a kitten. What would be "reduced appetite" in an adult might be normal-to-low for a kitten still learning to eat independently.</p>
+<h2 id="life-stages-kittens-adults-and-senior-cats">Life Stages: Kittens, Adults and Senior Cats</h2>
 
-<p><strong>Adult Cats (1-7 years):</strong> This is the phase where most cats establish stable patterns. Activity level, eating habits, and bathroom routines tend to be consistent. This is the phase where your baseline serves you best—if an adult cat suddenly becomes less active or eats less, it's a more notable change from their established norm.</p>
+<p>A young kitten's needs, behaviors and patterns are completely different from an adult cat's, which are different again from a senior's. Good tracking acknowledges these stages rather than expecting an eight-year-old cat to have the activity level of a two-year-old.</p>
 
-<p><strong>Senior Cats (7+ years):</strong> As cats age, activity typically decreases—and this is normal. A senior cat sleeping more and moving less is not inherently concerning; it's a natural part of aging. However, senior cats also become more prone to certain conditions, and activity levels that decrease beyond their normal senior baseline might be worth noting. You might adjust what "normal activity" means for a senior cat while still tracking changes from that adjusted baseline.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Life stage</th><th>What's typical</th><th>How to read changes</th></tr></thead>
+<tbody>
+<tr><td><strong>Kittens</strong> (under 1 year)</td><td>Very active; eat more frequently in smaller portions; enthusiastic appetite; more frequent litter box visits than adults</td><td>"High activity" is normal for a kitten. What would be "reduced appetite" in an adult might be normal-to-low for a kitten still learning to eat independently.</td></tr>
+<tr><td><strong>Adults</strong> (1&ndash;7 years)</td><td>Stable, consistent patterns in activity, eating and bathroom routines</td><td>Your baseline serves you best here. A sudden drop in activity or appetite is a more notable change from their established norm.</td></tr>
+<tr><td><strong>Seniors</strong> (7+ years)</td><td>Activity typically decreases; sleeping more and moving less is a natural part of aging</td><td>Track changes from their adjusted senior baseline. Decreases beyond that baseline might be worth noting.</td></tr>
+</tbody>
+</table>
+</div>
 
-<p>Senior cats' appetite, water intake, and litter box patterns can become more variable too. More frequent bathroom visits, changes in appetite, or shifts in water intake are more common in older cats and warrant closer attention when they deviate even from normal senior patterns.</p>
+<h3>Senior cats need closer attention</h3>
 
-<p><strong>How to adjust your tracking:</strong> When logging a senior cat, note their age or life stage in the "Notes" column if helpful ("Senior check" or "Senior—age 11"). This reminds you when reviewing your data that baseline expectations for activity and behavior are age-appropriate. It also helps your vet understand that an activity level that might be concerning in a three-year-old is normal for a twelve-year-old.</p>
+<p>Senior cats also become more prone to certain conditions. Their appetite, water intake and litter box patterns can become more variable. More frequent bathroom visits, appetite changes or shifts in water intake are more common in older cats, and they warrant closer attention when they deviate even from normal senior patterns.</p>
 
-<h2>Life Events: Diet Changes, New Cats, Moves, and More</h2>
+<div class="callout tip">
+<p class="box-title">How to adjust your tracking</p>
+<p>When logging a senior cat, note their age or life stage in the Notes column if helpful ("Senior check" or "Senior, age 11"). This reminds you that baseline expectations are age-appropriate, and helps your vet see that an activity level that might be concerning in a three-year-old is normal for a twelve-year-old.</p>
+</div>
 
-<p>Beyond just seasons and aging, tracking should adapt to major life events and changes in your household. When you make a diet change, are starting or adjusting a medication, welcome a new cat, or move to a new home, your tracking priorities might shift temporarily.</p>
+<figure class="pin-figure">
+<img src="images/pins/seasonal-life-stage-adjustments.jpg" alt="Infographic: five ways to adjust cat tracking for age and season" width="600" height="900" loading="lazy">
+<figcaption>Save this summary to Pinterest for later.</figcaption>
+</figure>
 
-<p><strong>Starting a New Diet:</strong> If you're transitioning one cat to a new food, you might temporarily focus more closely on appetite level and stool quality to make sure the transition is smooth. Add a note: "Week 1 of diet change." This helps you distinguish between normal variation and issues related to the dietary change.</p>
+<h2 id="life-events-diet-changes-new-cats-moves-and-more">Life Events: Diet Changes, New Cats, Moves and More</h2>
 
-<p><strong>Starting a New Medication or Supplement:</strong> The first two weeks after starting something new warrant closer attention. You might log more frequently or focus extra attention on behavior changes. Note the start date clearly: "Started probiotic August 15." This creates a clear marker in your data so you can later compare before and after.</p>
+<p>Beyond seasons and aging, tracking should adapt to major changes in your household. Your priorities might shift temporarily when something big happens.</p>
 
-<p><strong>Adding a New Cat:</strong> Existing cats often shift their behavior (more hiding, less activity, different appetite) when a new cat joins the household. Note this in your tracker: "New cat introduced August 10." It helps you distinguish between changes due to household dynamics and changes worth separate concern.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Event</th><th>What to watch</th><th>Example note</th></tr></thead>
+<tbody>
+<tr><td>Starting a new diet</td><td>Focus more closely on appetite and stool quality to make sure the transition is smooth</td><td>"Week 1 of diet change"</td></tr>
+<tr><td>Starting a new medication or supplement</td><td>The first two weeks warrant closer attention; you might log more often or watch behavior more closely</td><td>"Started probiotic August 15"</td></tr>
+<tr><td>Adding a new cat</td><td>Existing cats often shift behavior: more hiding, less activity, different appetite</td><td>"New cat introduced August 10"</td></tr>
+<tr><td>Moving to a new home</td><td>Cats often become less active, hide more or change appetite temporarily</td><td>"Just moved" or "3 days post-move"</td></tr>
+</tbody>
+</table>
+</div>
 
-<p><strong>Moving to a New Home:</strong> Cats often become less active, more hide-y, or change appetite temporarily after a move. Note "Just moved" or "3 days post-move" in your observations. This context matters.</p>
+<p>These notes help you distinguish normal variation, or changes due to household dynamics, from changes worth separate concern. A clear start date also creates a marker so you can compare before and after.</p>
 
-<p><strong>How to adjust your tracking:</strong> When major life events happen, explicitly note them in your "Notes" column. "Starting medication," "New cat," "Moved homes," "Diet change." This transforms your tracker from just a data collection tool into a timeline that connects observations to real-world context. Your vet will appreciate this context when reviewing weeks of entries.</p>
+<div class="callout tip">
+<p class="box-title">How to adjust your tracking</p>
+<p>When major life events happen, write them explicitly in your Notes column: "Starting medication," "New cat," "Moved homes," "Diet change." This turns your tracker from a data collection tool into a timeline that connects observations to real-world context. Your vet will appreciate it when reviewing weeks of entries.</p>
+</div>
 
-<h2>Annual Baselines: Comparing Year to Year</h2>
+<h2 id="annual-baselines-comparing-year-to-year">Annual Baselines: Comparing Year to Year</h2>
 
-<p>After you've been tracking for a year, you have something powerful: a full year of baseline data for each cat. This is incredibly valuable because you can now compare how a cat looks in August of Year 2 compared to August of Year 1. You can see whether patterns are repeating seasonally or whether something is genuinely different.</p>
+<p>After a year of tracking, you have something powerful: a full year of baseline data for each cat. You can compare August of Year 2 with August of Year 1 and see whether patterns are repeating seasonally or whether something is genuinely different.</p>
 
-<p>Some owners like to make a quick annual summary: "Year 1 August baseline: Whiskers typically 4-5 litter box visits daily, appetite normal, activity active daily." Keep this summary with your tracker. It makes year-over-year comparison easy.</p>
+<p>Some owners like to write a quick annual summary and keep it with the tracker. For example:</p>
 
-<h2>Keep Tracking Simple While Staying Responsive</h2>
+<div class="callout tip">
+<p class="box-title">Example annual summary</p>
+<p>"Year 1 August baseline: Whiskers typically 4&ndash;5 litter box visits daily, appetite normal, activity active daily."</p>
+</div>
 
-<p>The key is finding balance: maintain consistent tracking without getting bogged down in complexity. Your tracker works best when it's a stable habit you can sustain, while also staying responsive to the reality that your cats' needs and patterns change over time.</p>
+<h2 id="keep-tracking-simple-while-staying-responsive">Keep Tracking Simple While Staying Responsive</h2>
 
-<p>To build tracking into your routine with a format that's flexible enough to accommodate these shifts, <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">download the Multi-Cat Household Health & Litter Tracker today</a>. It's structured to handle both consistency and change—letting you maintain a stable baseline while adjusting for seasons, life stages, and the real events that shape your cats' lives.</p>
+<p>The key is balance: maintain consistent tracking without getting bogged down in complexity. Your tracker works best as a stable habit you can sustain, while staying responsive to the reality that your cats' needs and patterns change over time.</p>
+
+<p>To build tracking into your routine with a format that's flexible enough to accommodate these shifts, <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">download the Multi-Cat Household Health &amp; Litter Tracker today</a>. It's structured to handle both consistency and change—letting you maintain a stable baseline while adjusting for seasons, life stages, and the real events that shape your cats' lives.</p>
+
+<aside class="post-cta">
+<img src="cover-600x600.png" alt="Multi-Cat Household Health & Litter Tracker" loading="lazy">
+<div><p class="cta-kicker">Make it easy to keep track</p>
+<h3>Multi-Cat Household Health & Litter Tracker</h3>
+<p>A ready-to-use spreadsheet and guide for tracking each cat's daily health and litter habits.</p>
+<p><a class="buy-button" href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Get the Tracker &middot; $14.99</a></p></div>
+</aside>
 
 </article>
-<footer><p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Subscribe for an email when new posts go live</a></p><p>&copy; 2026</p></footer>
+</main>
+<footer class="site-footer"><div class="inner">
+<p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Get an email when new guides go live</a></p>
+<p>&copy; 2026 SimpleTrackers &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
+</div></footer>
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
   Paddle.Initialize({ token: "live_2c65c91a22a9d6a12b1872dcedb" });

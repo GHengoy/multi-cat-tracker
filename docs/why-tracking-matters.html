@@ -10,63 +10,236 @@
 <meta property="og:title" content="Why Tracking Your Multi-Cat Household Really Matters">
 <meta property="og:description" content="Can&#x27;t tell which cat is off their food or skipping the litter box? Why tracking each cat in a multi-cat home catches health problems earlier.">
 <meta property="og:url" content="https://ghengoy.github.io/multi-cat-tracker/why-tracking-matters.html">
-<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/cover-600x600.png">
+<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/images/hero/why-tracking-matters.jpg">
 <meta name="p:domain_verify" content="ed2ca7fb71cecfffeba5d895002ee1d1"/>
 <script data-goatcounter="https://ghengoy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-  a { color: #0a5; }
-  header, footer { font-size: 0.9rem; color: #666; }
-  nav a { margin-right: 1rem; }
-  .product-box { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
-  .product-box img { max-width: 200px; display: block; margin-bottom: 1rem; }
-  .buy-button { display: inline-block; background: #0a5; color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; }
-  .buy-button:hover { background: #084; }
-  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
-  .product-card { display: flex; flex-direction: column; gap: 0.25rem; border: 1px solid #ddd; border-radius: 8px; padding: 0.75rem; color: #222; text-decoration: none; font-size: 0.9rem; line-height: 1.35; }
-  .product-card:hover { border-color: #0a5; }
-  .product-card img { width: 100%; height: auto; border-radius: 4px; }
-  .product-card span { color: #666; }
-  .product-card .price { color: #0a5; font-weight: bold; }
+  :root { --accent: #2F5D62; --accent-dark: #1E3F43; --tint: #EAF2F1; --ink: #1f2328; --muted: #5d6470;
+          --line: #e4e1da; --paper: #fbfaf7; --card: #ffffff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+         font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-dark); }
+  img { max-width: 100%; height: auto; }
+  .site-header { background: var(--card); border-bottom: 1px solid var(--line); }
+  .site-header .inner { max-width: 760px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 17px; display: flex; align-items: center; gap: 10px; }
+  .brand-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); display: inline-block; position: relative; }
+  .brand-mark::after { content: ""; position: absolute; left: 7px; top: 8px; width: 14px; height: 3px; background: #fff; border-radius: 2px;
+                       box-shadow: 0 5px 0 #fff, 0 10px 0 rgba(255,255,255,.6); }
+  .site-header nav { display: flex; gap: 18px; font-size: 15px; }
+  .site-header nav a { color: var(--muted); text-decoration: none; }
+  .site-header nav a:hover { color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 56px; }
+  article > h1, main > h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.2; letter-spacing: -0.02em; margin: 8px 0 12px; }
+  h2 { font-size: 27px; line-height: 1.3; letter-spacing: -0.01em; margin: 52px 0 14px; padding-top: 6px; scroll-margin-top: 16px; }
+  h3 { font-size: 21px; line-height: 1.35; margin: 32px 0 8px; }
+  p { margin: 0 0 20px; }
+  ul, ol { padding-left: 1.3em; margin: 0 0 22px; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 650; }
+  .pillar-link { font-size: 15px; margin: 0 0 4px; }
+  .pillar-link a { text-decoration: none; }
+  .post-meta { color: var(--muted); font-size: 15px; margin: 0 0 24px; }
+  .post-hero { margin: 0 0 28px; }
+  .post-hero img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; display: block; background: var(--tint); }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  figcaption a { color: var(--muted); }
+  .toc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px 8px; margin: 0 0 32px; font-size: 16px; }
+  .toc-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .toc ol { margin: 0 0 10px; }
+  .toc li { margin-bottom: 4px; }
+  .toc a { text-decoration: none; }
+  .key-takeaways, .callout { border-radius: 12px; padding: 20px 24px 6px; margin: 0 0 30px; }
+  .key-takeaways { background: var(--tint); border-left: 5px solid var(--accent); }
+  .key-takeaways ul { margin-bottom: 14px; }
+  .box-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-dark); }
+  .callout { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--accent); }
+  .callout.note { border-left-color: #b7791f; }
+  .callout.note .box-title { color: #8a5a12; }
+  .steps { list-style: none; counter-reset: step; padding-left: 0; }
+  .steps > li { counter-increment: step; position: relative; padding-left: 52px; margin-bottom: 18px; }
+  .steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%;
+                        background: var(--accent); color: #fff; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .table-wrap { overflow-x: auto; margin: 0 0 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; font-size: 16px; line-height: 1.5; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--tint); color: var(--accent-dark); font-weight: 700; }
+  tr:last-child td { border-bottom: 0; }
+  .pin-figure { margin: 36px auto; max-width: 400px; text-align: center; }
+  .pin-figure img { border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.12); display: block; }
+  blockquote { margin: 0 0 24px; padding: 4px 0 4px 20px; border-left: 3px solid var(--line); color: var(--muted); font-style: italic; }
+  .post-cta { display: flex; gap: 24px; align-items: center; background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--accent);
+              border-radius: 14px; padding: 24px; margin: 48px 0 8px; }
+  .post-cta img { width: 150px; border-radius: 10px; flex-shrink: 0; }
+  .post-cta h3 { margin: 2px 0 6px; }
+  .post-cta p { margin-bottom: 12px; font-size: 16px; }
+  .cta-kicker { font-size: 13px !important; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 !important; }
+  .buy-button { display: inline-block; background: var(--accent); color: #fff !important; padding: 12px 22px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; }
+  .buy-button:hover { background: var(--accent-dark); }
+  .product-box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin: 24px 0 36px; display: grid; grid-template-columns: 200px 1fr; gap: 0 24px; align-items: center; }
+  .product-box img { width: 200px; border-radius: 10px; grid-row: span 3; }
+  .product-box h3 { margin: 0 0 6px; }
+  .product-box p { margin-bottom: 12px; font-size: 16px; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; margin: 12px 0 36px; }
+  .product-card { display: flex; flex-direction: column; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.4; }
+  .product-card:hover { border-color: var(--accent); }
+  .product-card img { width: 100%; border-radius: 8px; margin-bottom: 4px; }
+  .product-card span { color: var(--muted); }
+  .product-card .price { color: var(--accent); font-weight: 700; }
+  .post-list { list-style: none; padding: 0; display: grid; gap: 16px; }
+  .post-list li { margin: 0; }
+  .post-card { display: flex; gap: 18px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: var(--ink); text-decoration: none; }
+  .post-card:hover { border-color: var(--accent); }
+  .post-card img { width: 200px; object-fit: cover; flex-shrink: 0; background: var(--tint); }
+  .post-card-text { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 16px 0; }
+  .post-card-text strong { font-size: 19px; line-height: 1.35; }
+  .post-card-desc { color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .post-card-date { color: var(--muted); font-size: 13px; }
+  .site-footer { border-top: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 15px; }
+  .site-footer .inner { max-width: 760px; margin: 0 auto; padding: 28px 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .site-footer p { margin: 0; }
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    h2 { font-size: 23px; margin-top: 40px; }
+    .post-cta, .post-card { flex-direction: column; }
+    .post-cta img { width: 120px; }
+    .post-card img { width: 100%; aspect-ratio: 16 / 9; }
+    .post-card-text { padding: 0 16px 16px; }
+    .product-box { grid-template-columns: 1fr; }
+    .product-box img { grid-row: auto; margin-bottom: 12px; }
+  }
 </style>
 </head>
 <body>
-<header><nav><a href="index.html">Home</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></header>
+<header class="site-header"><div class="inner">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Multi-Cat Health</a>
+<nav><a href="index.html">Guides</a><a href="pillar-guide.html">Start here</a></nav>
+</div></header>
+<main>
 <article>
 <h1>Why Tracking Your Multi-Cat Household Really Matters</h1>
-<p class="date">2026-08-21</p>
 <p class="pillar-link"><a href="pillar-guide.html">&larr; Back to the Complete Multi-Cat Household Guide</a></p>
+<p class="post-meta"><time datetime="2026-08-21">August 21, 2026</time> &middot; 4 min read</p>
+<figure class="post-hero"><img src="images/hero/why-tracking-matters.jpg" alt="A grey cat and a tabby-and-white cat lying side by side on a rug" width="1200" height="675"><figcaption>Photo: <a href="https://www.flickr.com/photos/43145783@N00/2056140825" rel="nofollow">foxypar4</a>, <a href="https://creativecommons.org/licenses/by/2.0/" rel="license nofollow">CC BY 2.0</a></figcaption></figure>
+<div class="key-takeaways">
+<p class="box-title">Key takeaways</p>
+<ul>
+<li><strong>The problem is scale:</strong> with several cats, individual patterns blur together and gradual changes are easy to miss.</li>
+<li><strong>Memory isn't enough:</strong> without a record, you bring your vet impressions instead of specifics.</li>
+<li><strong>A log sets each cat's normal:</strong> two or three weeks of notes show what is typical for that specific cat.</li>
+<li><strong>Clarity is the payoff:</strong> a simple daily log turns vague concerns into clear observations.</li>
+</ul>
+</div>
+<nav class="toc" aria-label="Contents"><p class="toc-title">In this guide</p>
+<ol>
+<li><a href="#living-with-multiple-cats-you-need-this-one-simple-practice">Living with Multiple Cats? You Need This One Simple Practice</a></li>
+<li><a href="#the-cost-of-not-tracking">The Cost of Not Tracking</a></li>
+<li><a href="#what-happens-when-you-start-tracking">What Happens When You Start Tracking</a></li>
+<li><a href="#the-multi-cat-household-advantage">The Multi-Cat Household Advantage</a></li>
+</ol></nav>
+<h2 id="living-with-multiple-cats-you-need-this-one-simple-practice">Living with Multiple Cats? You Need This One Simple Practice</h2>
 
-<h2>Living with Multiple Cats? You Need This One Simple Practice</h2>
+<p>If you share your home with two, three, or more cats, you know the feeling: something seems off with one of them, but you can't quite figure out which one, or what changed.</p>
 
-<p>If you share your home with two, three, or more cats, you know the feeling: something seems off with one of them, but you can't quite figure out which one, or what changed. Was it Whiskers who seemed less interested in food yesterday, or was it Luna? Did Shadow use the litter box the usual number of times today? When you have multiple cats living under one roof, their individual patterns disappear into the general chaos of daily life.</p>
+<ul>
+<li><strong>Who was it?</strong> Was it Whiskers who seemed less interested in food yesterday, or was it Luna?</li>
+<li><strong>Was it normal?</strong> Did Shadow use the litter box the usual number of times today?</li>
+</ul>
 
-<p>This is one of the biggest challenges multi-cat owners face, and it's not because you're neglecting your cats or lack the ability to observe them. It's simply a problem of scale and memory. Each cat has their own normal rhythms—eating habits, bathroom routines, activity levels, and behavioral quirks. In a multi-cat household, these individual patterns overlap, and it becomes remarkably easy to miss gradual changes in any one cat's behavior or health.</p>
+<p>When multiple cats live under one roof, their individual patterns disappear into the general chaos of daily life. This isn't because you're neglecting your cats or lack the ability to observe them. It's simply a problem of scale and memory.</p>
 
-<h2>The Cost of Not Tracking</h2>
+<p>Each cat has their own normal rhythms: eating habits, bathroom routines, activity levels and behavioral quirks. In a multi-cat household these patterns overlap, and it becomes remarkably easy to miss gradual changes in any one cat's behavior or health.</p>
 
-<p>Without a systematic record, you're relying entirely on memory and gut feeling. When you finally decide something is worth mentioning to your veterinarian, you find yourself saying things like "I think Mittens has been eating less" or "I'm not sure, but one of the cats seems less active." Your vet asks for specifics—how much less? For how long? How many times a day?—and you realize you don't actually have clear answers. Your vet is working with impressions rather than data, which makes their job harder and leaves you less confident in the advice they give.</p>
+<h2 id="the-cost-of-not-tracking">The Cost of Not Tracking</h2>
 
-<p>Beyond vet visits, the lack of a clear record also means you might miss important patterns in medications and responses to dietary changes. If you're managing a cat on a special diet or with supplements, you want to know whether it's working—but how can you tell without a baseline to compare to?</p>
+<p>Without a systematic record, you're relying entirely on memory and gut feeling. When you finally mention something to your veterinarian, you end up saying things like "I think Mittens has been eating less" or "One of the cats seems less active."</p>
 
-<h2>What Happens When You Start Tracking</h2>
+<p>Then your vet asks for specifics, and you realize you don't have clear answers:</p>
 
-<p>The moment you begin keeping a simple daily log of observations, everything changes. Suddenly, you have a record. You know which cat actually used the litter box more frequently this week. You can see that one cat's appetite has been lower for the last five days, but it picked back up yesterday. You have a timeline.</p>
+<ul>
+<li><strong>How much less?</strong></li>
+<li><strong>For how long?</strong></li>
+<li><strong>How many times a day?</strong></li>
+</ul>
 
-<p>This record does several powerful things. First, it makes you a more observant owner. When you know you'll be logging something, you actually pay attention to details you might otherwise miss—like whether a cat ate the full meal or left half, or how much water they're drinking compared to their usual pattern. This attention alone often catches problems earlier, when they're easier to address.</p>
+<p>Your vet is working with impressions rather than data. That makes their job harder and leaves you less confident in the advice they give.</p>
 
-<p>Second, it creates a concrete reference point for normal. Once you've logged two or three weeks of observations for each cat, you know what normal looks like for that specific animal. You know that Whiskers eats quickly and always finishes her bowl, while Tiger is a grazer. You know that Luna typically visits the litter box four or five times a day, and Shadow is less frequent. When something deviates from that pattern, you notice it immediately.</p>
+<div class="callout note">
+<p class="box-title">Beyond vet visits</p>
+<p>Without a clear record, you might also miss important patterns in medications and responses to dietary changes. If you're managing a cat on a special diet or with supplements, you want to know whether it's working. That's hard to tell without a baseline to compare to.</p>
+</div>
 
-<p>Third, and perhaps most importantly, it gives you something powerful to bring to your veterinarian. Instead of "I think something's off," you can say "Here's a two-week log. Look at Monday through Thursday—that's normal for this cat. Friday and Saturday, the pattern changed like this." Your vet now has real data to work with, and you have concrete answers to their questions.</p>
+<h2 id="what-happens-when-you-start-tracking">What Happens When You Start Tracking</h2>
 
-<h2>The Multi-Cat Household Advantage</h2>
+<p>The moment you begin keeping a simple daily log, everything changes. You know which cat actually used the litter box more frequently this week. You can see that one cat's appetite was lower for five days but picked back up yesterday. You have a timeline.</p>
 
-<p>In a multi-cat home, tracking becomes not just useful but essential. You're not trying to remember details about one cat; you're managing multiple individual patterns simultaneously. A simple, organized tracking system lets you see each cat clearly, distinguishing their individual routines from the group noise. It's the difference between vague concerns and clear observations—and in any healthcare decision, clarity matters.</p>
+<p>That record does three powerful things.</p>
 
-<p>The tracker we created for multi-cat owners is designed with this exact challenge in mind: helping you log observations for each cat individually, build a timeline of their patterns, and have real data ready for your veterinarian. If you're ready to stop guessing and start knowing, <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">download the Multi-Cat Household Health & Litter Tracker today</a> and experience how much easier it is to manage your multi-cat home with organized observations.</p>
+<figure class="pin-figure">
+<img src="images/pins/why-tracking-matters.jpg" alt="Infographic: five reasons to track each cat separately, from noticing details to seeing if a diet change works" width="600" height="900" loading="lazy">
+<figcaption>Save this summary to Pinterest for later.</figcaption>
+</figure>
+
+<h3>1. It makes you a more observant owner</h3>
+
+<p>When you know you'll be logging something, you pay attention to details you might otherwise miss, like whether a cat finished the meal or left half, or how much water they're drinking compared to usual. This attention alone often catches problems earlier, when they're easier to address.</p>
+
+<h3>2. It creates a reference point for normal</h3>
+
+<p>After two or three weeks of observations for each cat, you know what normal looks like for that specific animal.</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Cat</th><th>What their normal looks like</th></tr></thead>
+<tbody>
+<tr><td>Whiskers</td><td>Eats quickly and always finishes her bowl</td></tr>
+<tr><td>Tiger</td><td>A grazer</td></tr>
+<tr><td>Luna</td><td>Visits the litter box four or five times a day</td></tr>
+<tr><td>Shadow</td><td>Visits the litter box less often</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>When something deviates from that pattern, you notice it immediately.</p>
+
+<h3>3. It gives you something to bring to your vet</h3>
+
+<p>Perhaps most importantly, you can replace "I think something's off" with "Here's a two-week log. Monday through Thursday is normal for this cat. On Friday and Saturday, the pattern changed like this." Your vet now has real data to work with, and you have concrete answers to their questions.</p>
+
+<h2 id="the-multi-cat-household-advantage">The Multi-Cat Household Advantage</h2>
+
+<p>In a multi-cat home, tracking becomes not just useful but essential. You're not remembering details about one cat; you're managing several individual patterns at once.</p>
+
+<div class="callout tip">
+<p class="box-title">What a good system does</p>
+<ul>
+<li>Lets you see each cat clearly, separate from the group noise</li>
+<li>Builds a timeline of each cat's patterns</li>
+<li>Keeps real data ready for your veterinarian</li>
+</ul>
+</div>
+
+<p>It's the difference between vague concerns and clear observations, and in any healthcare decision, clarity matters.</p>
+
+<p>The tracker we created for multi-cat owners is designed with this exact challenge in mind: helping you log observations for each cat individually, build a timeline of their patterns, and have real data ready for your veterinarian. If you're ready to stop guessing and start knowing, <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">download the Multi-Cat Household Health &amp; Litter Tracker today</a> and experience how much easier it is to manage your multi-cat home with organized observations.</p>
+
+<aside class="post-cta">
+<img src="cover-600x600.png" alt="Multi-Cat Household Health & Litter Tracker" loading="lazy">
+<div><p class="cta-kicker">Make it easy to keep track</p>
+<h3>Multi-Cat Household Health & Litter Tracker</h3>
+<p>A ready-to-use spreadsheet and guide for tracking each cat's daily health and litter habits.</p>
+<p><a class="buy-button" href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Get the Tracker &middot; $14.99</a></p></div>
+</aside>
 
 </article>
-<footer><p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Subscribe for an email when new posts go live</a></p><p>&copy; 2026</p></footer>
+</main>
+<footer class="site-footer"><div class="inner">
+<p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Get an email when new guides go live</a></p>
+<p>&copy; 2026 SimpleTrackers &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
+</div></footer>
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
   Paddle.Initialize({ token: "live_2c65c91a22a9d6a12b1872dcedb" });

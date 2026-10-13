@@ -10,71 +10,249 @@
 <meta property="og:title" content="How Many Litter Boxes Do You Need for Multiple Cats?">
 <meta property="og:description" content="How many litter boxes do multiple cats need? The one-per-cat-plus-one rule explained, with placement tips and signs your setup isn&#x27;t working.">
 <meta property="og:url" content="https://ghengoy.github.io/multi-cat-tracker/how-many-litter-boxes-for-multiple-cats.html">
-<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/cover-600x600.png">
+<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/images/hero/how-many-litter-boxes-for-multiple-cats.jpg">
 <meta name="p:domain_verify" content="ed2ca7fb71cecfffeba5d895002ee1d1"/>
 <script data-goatcounter="https://ghengoy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-  a { color: #0a5; }
-  header, footer { font-size: 0.9rem; color: #666; }
-  nav a { margin-right: 1rem; }
-  .product-box { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
-  .product-box img { max-width: 200px; display: block; margin-bottom: 1rem; }
-  .buy-button { display: inline-block; background: #0a5; color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; }
-  .buy-button:hover { background: #084; }
-  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
-  .product-card { display: flex; flex-direction: column; gap: 0.25rem; border: 1px solid #ddd; border-radius: 8px; padding: 0.75rem; color: #222; text-decoration: none; font-size: 0.9rem; line-height: 1.35; }
-  .product-card:hover { border-color: #0a5; }
-  .product-card img { width: 100%; height: auto; border-radius: 4px; }
-  .product-card span { color: #666; }
-  .product-card .price { color: #0a5; font-weight: bold; }
+  :root { --accent: #2F5D62; --accent-dark: #1E3F43; --tint: #EAF2F1; --ink: #1f2328; --muted: #5d6470;
+          --line: #e4e1da; --paper: #fbfaf7; --card: #ffffff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+         font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-dark); }
+  img { max-width: 100%; height: auto; }
+  .site-header { background: var(--card); border-bottom: 1px solid var(--line); }
+  .site-header .inner { max-width: 760px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 17px; display: flex; align-items: center; gap: 10px; }
+  .brand-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); display: inline-block; position: relative; }
+  .brand-mark::after { content: ""; position: absolute; left: 7px; top: 8px; width: 14px; height: 3px; background: #fff; border-radius: 2px;
+                       box-shadow: 0 5px 0 #fff, 0 10px 0 rgba(255,255,255,.6); }
+  .site-header nav { display: flex; gap: 18px; font-size: 15px; }
+  .site-header nav a { color: var(--muted); text-decoration: none; }
+  .site-header nav a:hover { color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 56px; }
+  article > h1, main > h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.2; letter-spacing: -0.02em; margin: 8px 0 12px; }
+  h2 { font-size: 27px; line-height: 1.3; letter-spacing: -0.01em; margin: 52px 0 14px; padding-top: 6px; scroll-margin-top: 16px; }
+  h3 { font-size: 21px; line-height: 1.35; margin: 32px 0 8px; }
+  p { margin: 0 0 20px; }
+  ul, ol { padding-left: 1.3em; margin: 0 0 22px; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 650; }
+  .pillar-link { font-size: 15px; margin: 0 0 4px; }
+  .pillar-link a { text-decoration: none; }
+  .post-meta { color: var(--muted); font-size: 15px; margin: 0 0 24px; }
+  .post-hero { margin: 0 0 28px; }
+  .post-hero img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; display: block; background: var(--tint); }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  figcaption a { color: var(--muted); }
+  .toc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px 8px; margin: 0 0 32px; font-size: 16px; }
+  .toc-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .toc ol { margin: 0 0 10px; }
+  .toc li { margin-bottom: 4px; }
+  .toc a { text-decoration: none; }
+  .key-takeaways, .callout { border-radius: 12px; padding: 20px 24px 6px; margin: 0 0 30px; }
+  .key-takeaways { background: var(--tint); border-left: 5px solid var(--accent); }
+  .key-takeaways ul { margin-bottom: 14px; }
+  .box-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-dark); }
+  .callout { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--accent); }
+  .callout.note { border-left-color: #b7791f; }
+  .callout.note .box-title { color: #8a5a12; }
+  .steps { list-style: none; counter-reset: step; padding-left: 0; }
+  .steps > li { counter-increment: step; position: relative; padding-left: 52px; margin-bottom: 18px; }
+  .steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%;
+                        background: var(--accent); color: #fff; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .table-wrap { overflow-x: auto; margin: 0 0 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; font-size: 16px; line-height: 1.5; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--tint); color: var(--accent-dark); font-weight: 700; }
+  tr:last-child td { border-bottom: 0; }
+  .pin-figure { margin: 36px auto; max-width: 400px; text-align: center; }
+  .pin-figure img { border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.12); display: block; }
+  blockquote { margin: 0 0 24px; padding: 4px 0 4px 20px; border-left: 3px solid var(--line); color: var(--muted); font-style: italic; }
+  .post-cta { display: flex; gap: 24px; align-items: center; background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--accent);
+              border-radius: 14px; padding: 24px; margin: 48px 0 8px; }
+  .post-cta img { width: 150px; border-radius: 10px; flex-shrink: 0; }
+  .post-cta h3 { margin: 2px 0 6px; }
+  .post-cta p { margin-bottom: 12px; font-size: 16px; }
+  .cta-kicker { font-size: 13px !important; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 !important; }
+  .buy-button { display: inline-block; background: var(--accent); color: #fff !important; padding: 12px 22px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; }
+  .buy-button:hover { background: var(--accent-dark); }
+  .product-box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin: 24px 0 36px; display: grid; grid-template-columns: 200px 1fr; gap: 0 24px; align-items: center; }
+  .product-box img { width: 200px; border-radius: 10px; grid-row: span 3; }
+  .product-box h3 { margin: 0 0 6px; }
+  .product-box p { margin-bottom: 12px; font-size: 16px; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; margin: 12px 0 36px; }
+  .product-card { display: flex; flex-direction: column; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.4; }
+  .product-card:hover { border-color: var(--accent); }
+  .product-card img { width: 100%; border-radius: 8px; margin-bottom: 4px; }
+  .product-card span { color: var(--muted); }
+  .product-card .price { color: var(--accent); font-weight: 700; }
+  .post-list { list-style: none; padding: 0; display: grid; gap: 16px; }
+  .post-list li { margin: 0; }
+  .post-card { display: flex; gap: 18px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: var(--ink); text-decoration: none; }
+  .post-card:hover { border-color: var(--accent); }
+  .post-card img { width: 200px; object-fit: cover; flex-shrink: 0; background: var(--tint); }
+  .post-card-text { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 16px 0; }
+  .post-card-text strong { font-size: 19px; line-height: 1.35; }
+  .post-card-desc { color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .post-card-date { color: var(--muted); font-size: 13px; }
+  .site-footer { border-top: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 15px; }
+  .site-footer .inner { max-width: 760px; margin: 0 auto; padding: 28px 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .site-footer p { margin: 0; }
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    h2 { font-size: 23px; margin-top: 40px; }
+    .post-cta, .post-card { flex-direction: column; }
+    .post-cta img { width: 120px; }
+    .post-card img { width: 100%; aspect-ratio: 16 / 9; }
+    .post-card-text { padding: 0 16px 16px; }
+    .product-box { grid-template-columns: 1fr; }
+    .product-box img { grid-row: auto; margin-bottom: 12px; }
+  }
 </style>
 </head>
 <body>
-<header><nav><a href="index.html">Home</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></header>
+<header class="site-header"><div class="inner">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Multi-Cat Health</a>
+<nav><a href="index.html">Guides</a><a href="pillar-guide.html">Start here</a></nav>
+</div></header>
+<main>
 <article>
 <h1>How Many Litter Boxes Do You Need for Multiple Cats?</h1>
-<p class="date">2026-09-07</p>
 <p class="pillar-link"><a href="pillar-guide.html">&larr; Back to the Complete Multi-Cat Household Guide</a></p>
+<p class="post-meta"><time datetime="2026-09-07">September 7, 2026</time> &middot; 5 min read</p>
+<figure class="post-hero"><img src="images/hero/how-many-litter-boxes-for-multiple-cats.jpg" alt="Black cat lying in a blue litter box on a wooden floor" width="1200" height="675"><figcaption>Photo: <a href="https://www.flickr.com/photos/31369133@N04/3873959131" rel="nofollow">wolfsavard</a>, <a href="https://creativecommons.org/licenses/by/2.0/" rel="license nofollow">CC BY 2.0</a></figcaption></figure>
+<div class="key-takeaways">
+<p class="box-title">Key takeaways</p>
+<ul>
+<li><strong>The rule:</strong> one litter box per cat, plus one extra. Two cats need three boxes.</li>
+<li><strong>Placement beats quantity:</strong> three boxes in one closet count as one location. Spread them across zones and floors.</li>
+<li><strong>Scooping changes the math:</strong> if you scoop less than daily, you need more boxes.</li>
+<li><strong>Check that it works:</strong> track box use for two weeks before and after any change.</li>
+</ul>
+</div>
+<nav class="toc" aria-label="Contents"><p class="toc-title">In this guide</p>
+<ol>
+<li><a href="#the-short-answer-one-per-cat-plus-one">The Short Answer: One Per Cat, Plus One</a></li>
+<li><a href="#why-the-extra-box-matters">Why the Extra Box Matters</a></li>
+<li><a href="#placement-beats-quantity">Placement Beats Quantity</a></li>
+<li><a href="#signs-your-current-setup-isn-t-working">Signs Your Current Setup Isn't Working</a></li>
+<li><a href="#cleaning-frequency-changes-the-math">Cleaning Frequency Changes the Math</a></li>
+<li><a href="#how-to-tell-if-it-s-actually-working">How to Tell If It's Actually Working</a></li>
+</ol></nav>
+<h2 id="the-short-answer-one-per-cat-plus-one">The Short Answer: One Per Cat, Plus One</h2>
 
-<h2>The Short Answer: One Per Cat, Plus One</h2>
+<p>If you're wondering how many litter boxes your multi-cat household actually needs, the practical guideline is straightforward: provide one box per cat, plus one extra.</p>
 
-<p>If you're wondering how many litter boxes your multi-cat household actually needs, the practical guideline is straightforward: provide one box per cat, plus one extra. Two cats means three boxes. Three cats means four. This isn't a guess—it comes from decades of cat behavior observation and from the real experiences of thousands of multi-cat households. It works because it accounts for individual preferences, competition, and the gaps that inevitably appear between cleanings.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Cats in your home</th><th>Litter boxes to provide</th></tr></thead>
+<tbody>
+<tr><td>2 cats</td><td>3 boxes</td></tr>
+<tr><td>3 cats</td><td>4 boxes</td></tr>
+<tr><td>4 cats</td><td>5 boxes</td></tr>
+<tr><td>5 cats</td><td>6 boxes</td></tr>
+</tbody>
+</table>
+</div>
 
-<p>The reasoning is simple: cats have preferences about which box they use, and they avoid boxes that another cat is actively using or has recently used. When you only have one box per cat, you're relying on perfect timing and cooperation. The extra box absorbs the friction—it gives a cat an alternative when their preferred box is occupied, soiled, or blocked by another cat. Without that buffer, you're much more likely to see elimination outside the boxes, which is the signal that something in your setup isn't working.</p>
+<p>This isn't a guess. It comes from decades of cat behavior observation and from the real experiences of thousands of multi-cat households. It works because it accounts for individual preferences, competition, and the gaps that inevitably appear between cleanings.</p>
 
-<h2>Why the Extra Box Matters</h2>
+<p>The reasoning is simple: cats have preferences about which box they use, and they avoid boxes that another cat is actively using or has recently used. With only one box per cat, you're relying on perfect timing and cooperation. The extra box absorbs that friction. Without the buffer, you're much more likely to see elimination outside the boxes, which is the signal that something in your setup isn't working.</p>
 
-<p>Resource competition is real in multi-cat households. Cats are territorial about litter boxes in ways many owners don't immediately recognize. One cat may position herself near the box to control access, or two cats with different schedules may find themselves competing for the same box at peak times. A cat that's blocked from their preferred box might use a less desirable location rather than wait or risk confrontation.</p>
+<h2 id="why-the-extra-box-matters">Why the Extra Box Matters</h2>
 
-<p>The extra box breaks this bottleneck. It provides an escape route when the primary boxes are occupied or when one cat is guarding access. It also creates redundancy for those stretches between cleanings—no matter how committed you are, every box gets neglected sometimes, and having multiple options means a cat isn't forced to use a dirty box when a fresh alternative exists nearby.</p>
+<p>Resource competition is real in multi-cat households. Cats are territorial about litter boxes in ways many owners don't immediately recognize. One cat may sit near the box to control access, or two cats with different schedules may compete for the same box at peak times. A cat that's blocked from their preferred box might use a less desirable spot rather than wait or risk confrontation.</p>
 
-<h2>Placement Beats Quantity</h2>
+<p>The extra box breaks this bottleneck in two ways:</p>
 
-<p>It's worth noting that three boxes crammed in the same closet effectively function as one location. Cats navigate their territory mentally as well as physically, and they think about litter boxes in terms of zones and access routes. A box in a basement corner is a fundamentally different location than a box on the second floor, even if they're only steps apart in actual distance.</p>
+<ul>
+<li><strong>An escape route.</strong> When the main boxes are occupied, or one cat is guarding access, there is always somewhere else to go.</li>
+<li><strong>A clean backup.</strong> Every box gets neglected sometimes. With several options, a cat isn't forced to use a dirty box when a fresh one is nearby.</li>
+</ul>
 
-<p>The best placement strategy spreads boxes across your home's natural zones—one area near active living spaces, one in a quieter zone, one on a different floor if your home has multiple levels. Avoid placing boxes at the end of dead-end corridors where a cat using the box can be trapped or cornered by another cat. Good placement means a cat always has a nearby, accessible option without having to navigate through another cat's territory to reach it.</p>
+<h2 id="placement-beats-quantity">Placement Beats Quantity</h2>
 
-<h2>Signs Your Current Setup Isn't Working</h2>
+<p>Three boxes crammed in the same closet effectively function as one location. Cats think about litter boxes in terms of zones and access routes. A box in a basement corner is a different location from a box on the second floor, even if they're only steps apart.</p>
 
-<p>If your multi-cat household is set up well, you'll rarely see evidence of litter box issues. What you're watching for are observable signals that something is wrong. Elimination outside the boxes is the clearest signal—if a cat is regularly urinating or defecating anywhere other than a litter box, your setup isn't meeting their needs. Other signs include all visible traffic concentrated on a single box even when others are available, a cat hesitating or waiting when another cat is near a box, or hurried entries and exits suggesting a cat is anxious about access.</p>
+<div class="callout tip">
+<p class="box-title">Placement checklist</p>
+<ul>
+<li>One box near the active living spaces</li>
+<li>One box in a quieter zone</li>
+<li>One box on a different floor, if your home has more than one level</li>
+<li>No boxes at the end of dead-end corridors, where a cat can be cornered by another cat</li>
+</ul>
+</div>
 
-<p>These observations are worth noting and mentioning to your veterinarian during your next visit, especially if they're new or persistent. Sometimes they indicate a simple fix like rearranging boxes; sometimes they point to something your vet should know about. Either way, documenting what you actually see is far more useful than trying to guess what the issue might be.</p>
+<p>Good placement means a cat always has a nearby, accessible option without having to cross another cat's territory to reach it.</p>
 
-<h2>Cleaning Frequency Changes the Math</h2>
+<figure class="pin-figure">
+<img src="images/pins/how-many-litter-boxes-for-multiple-cats.jpg" alt="Infographic summarising how many litter boxes multiple cats need and where to place them" width="600" height="900" loading="lazy">
+<figcaption>Save this summary to Pinterest for later.</figcaption>
+</figure>
 
-<p>The number of boxes you need also depends partly on how frequently you scoop. A household that scoops twice daily can function well with fewer boxes than a household scooping once a day or less. Neglected boxes create avoidance no matter how many alternatives you provide—a cat will hold it or find another location rather than use a dirty box. So if you're committed to daily scooping, the n+1 guideline works well. If you're only scooping a few times a week, you probably need more boxes to ensure at least one remains acceptably clean.</p>
+<h2 id="signs-your-current-setup-isn-t-working">Signs Your Current Setup Isn't Working</h2>
 
-<h2>How to Tell If It's Actually Working</h2>
+<p>If your multi-cat household is set up well, you'll rarely see evidence of litter box issues. These are the observable signals that something is wrong:</p>
 
-<p>The best indicator is simple observation over time. Note which cat uses which box and how often—notice patterns in their preferences and habits. When you make a change like adding a box or rearranging existing ones, keep track of the two weeks before and the two weeks after. Note any changes in behavior, any reduction in accidents, any difference in how the boxes are distributed. Memory alone won't capture this. A quick record does.</p>
+<ul>
+<li><strong>Elimination outside the boxes.</strong> The clearest signal. If a cat regularly urinates or defecates anywhere other than a litter box, your setup isn't meeting their needs.</li>
+<li><strong>All traffic on one box.</strong> Every visit goes to a single box even when others are available.</li>
+<li><strong>Hesitation or waiting.</strong> A cat pauses or holds back when another cat is near a box.</li>
+<li><strong>Hurried visits.</strong> Rushed entries and exits suggest a cat is anxious about access.</li>
+</ul>
 
-<p>This is exactly what multi-cat household tracking is for. You'll be able to see objective patterns in box usage and behavior changes that you'd otherwise miss. When you bring observations like these to your veterinarian—whether everything is working smoothly or something seems off—you're giving them real data instead of impressions. It transforms the conversation from "I think something might be wrong" to "Here's what I've observed over the past two weeks."</p>
+<div class="callout note">
+<p class="box-title">When to mention it to your vet</p>
+<p>These observations are worth raising at your next veterinary visit, especially if they're new or persistent. Sometimes they point to a simple fix like rearranging boxes; sometimes they point to something your vet should know about. Either way, documenting what you actually see is far more useful than guessing.</p>
+</div>
 
-<p>To get started tracking litter box usage and other multi-cat observations systematically, <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">download the Multi-Cat Household Health & Litter Tracker</a>. It's pre-formatted to log box usage patterns easily, along with other household observations, so you can see what's actually happening with your setup over time rather than relying on memory.</p>
+<h2 id="cleaning-frequency-changes-the-math">Cleaning Frequency Changes the Math</h2>
+
+<p>The number of boxes you need also depends on how often you scoop. Neglected boxes create avoidance no matter how many alternatives you provide. A cat will hold it or find another location rather than use a dirty box.</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>How often you scoop</th><th>What it means for box count</th></tr></thead>
+<tbody>
+<tr><td>Twice a day</td><td>Can work well with fewer boxes</td></tr>
+<tr><td>Once a day</td><td>The one-per-cat-plus-one rule works well</td></tr>
+<tr><td>A few times a week</td><td>Add more boxes so at least one stays acceptably clean</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="how-to-tell-if-it-s-actually-working">How to Tell If It's Actually Working</h2>
+
+<p>The best indicator is simple observation over time. Memory alone won't capture it. A quick record does.</p>
+
+<ol class="steps">
+<li><strong>Note who uses which box.</strong> Record which cat uses which box and how often, and look for preferences.</li>
+<li><strong>Record two weeks before a change.</strong> Before adding a box or moving one, log a baseline.</li>
+<li><strong>Record two weeks after.</strong> Compare accidents, which boxes get used and how evenly visits are spread.</li>
+</ol>
+
+<p>This is exactly what multi-cat household tracking is for. You'll see objective patterns in box usage and behavior that you'd otherwise miss. When you bring observations like these to your veterinarian, whether everything is working smoothly or something seems off, you're giving them real data instead of impressions. The conversation changes from "I think something might be wrong" to "Here's what I've observed over the past two weeks."</p>
+
+<p>To start tracking litter box usage and other multi-cat observations systematically, <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">download the Multi-Cat Household Health &amp; Litter Tracker</a>. It's pre-formatted to log box usage patterns along with other household observations, so you can see what's actually happening with your setup over time.</p>
+
+<aside class="post-cta">
+<img src="cover-600x600.png" alt="Multi-Cat Household Health & Litter Tracker" loading="lazy">
+<div><p class="cta-kicker">Make it easy to keep track</p>
+<h3>Multi-Cat Household Health & Litter Tracker</h3>
+<p>A ready-to-use spreadsheet and guide for tracking each cat's daily health and litter habits.</p>
+<p><a class="buy-button" href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Get the Tracker &middot; $14.99</a></p></div>
+</aside>
 
 </article>
-<footer><p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Subscribe for an email when new posts go live</a></p><p>&copy; 2026</p></footer>
+</main>
+<footer class="site-footer"><div class="inner">
+<p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Get an email when new guides go live</a></p>
+<p>&copy; 2026 SimpleTrackers &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
+</div></footer>
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
   Paddle.Initialize({ token: "live_2c65c91a22a9d6a12b1872dcedb" });

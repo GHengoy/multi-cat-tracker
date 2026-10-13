@@ -10,77 +10,241 @@
 <meta property="og:title" content="Building Your Daily Tracking Routine: How to Log Without Overwhelm">
 <meta property="og:description" content="A few-minutes-a-day routine for logging every cat&#x27;s litter box, food, and behavior without overwhelm, so tracking actually sticks.">
 <meta property="og:url" content="https://ghengoy.github.io/multi-cat-tracker/daily-tracking-routine.html">
-<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/cover-600x600.png">
+<meta property="og:image" content="https://ghengoy.github.io/multi-cat-tracker/images/hero/daily-tracking-routine.jpg">
 <meta name="p:domain_verify" content="ed2ca7fb71cecfffeba5d895002ee1d1"/>
 <script data-goatcounter="https://ghengoy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-  a { color: #0a5; }
-  header, footer { font-size: 0.9rem; color: #666; }
-  nav a { margin-right: 1rem; }
-  .product-box { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
-  .product-box img { max-width: 200px; display: block; margin-bottom: 1rem; }
-  .buy-button { display: inline-block; background: #0a5; color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: bold; }
-  .buy-button:hover { background: #084; }
-  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
-  .product-card { display: flex; flex-direction: column; gap: 0.25rem; border: 1px solid #ddd; border-radius: 8px; padding: 0.75rem; color: #222; text-decoration: none; font-size: 0.9rem; line-height: 1.35; }
-  .product-card:hover { border-color: #0a5; }
-  .product-card img { width: 100%; height: auto; border-radius: 4px; }
-  .product-card span { color: #666; }
-  .product-card .price { color: #0a5; font-weight: bold; }
+  :root { --accent: #2F5D62; --accent-dark: #1E3F43; --tint: #EAF2F1; --ink: #1f2328; --muted: #5d6470;
+          --line: #e4e1da; --paper: #fbfaf7; --card: #ffffff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+         font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-dark); }
+  img { max-width: 100%; height: auto; }
+  .site-header { background: var(--card); border-bottom: 1px solid var(--line); }
+  .site-header .inner { max-width: 760px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 17px; display: flex; align-items: center; gap: 10px; }
+  .brand-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); display: inline-block; position: relative; }
+  .brand-mark::after { content: ""; position: absolute; left: 7px; top: 8px; width: 14px; height: 3px; background: #fff; border-radius: 2px;
+                       box-shadow: 0 5px 0 #fff, 0 10px 0 rgba(255,255,255,.6); }
+  .site-header nav { display: flex; gap: 18px; font-size: 15px; }
+  .site-header nav a { color: var(--muted); text-decoration: none; }
+  .site-header nav a:hover { color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 20px 56px; }
+  article > h1, main > h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.2; letter-spacing: -0.02em; margin: 8px 0 12px; }
+  h2 { font-size: 27px; line-height: 1.3; letter-spacing: -0.01em; margin: 52px 0 14px; padding-top: 6px; scroll-margin-top: 16px; }
+  h3 { font-size: 21px; line-height: 1.35; margin: 32px 0 8px; }
+  p { margin: 0 0 20px; }
+  ul, ol { padding-left: 1.3em; margin: 0 0 22px; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 650; }
+  .pillar-link { font-size: 15px; margin: 0 0 4px; }
+  .pillar-link a { text-decoration: none; }
+  .post-meta { color: var(--muted); font-size: 15px; margin: 0 0 24px; }
+  .post-hero { margin: 0 0 28px; }
+  .post-hero img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; display: block; background: var(--tint); }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  figcaption a { color: var(--muted); }
+  .toc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px 8px; margin: 0 0 32px; font-size: 16px; }
+  .toc-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .toc ol { margin: 0 0 10px; }
+  .toc li { margin-bottom: 4px; }
+  .toc a { text-decoration: none; }
+  .key-takeaways, .callout { border-radius: 12px; padding: 20px 24px 6px; margin: 0 0 30px; }
+  .key-takeaways { background: var(--tint); border-left: 5px solid var(--accent); }
+  .key-takeaways ul { margin-bottom: 14px; }
+  .box-title { font-weight: 700; margin: 0 0 8px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-dark); }
+  .callout { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--accent); }
+  .callout.note { border-left-color: #b7791f; }
+  .callout.note .box-title { color: #8a5a12; }
+  .steps { list-style: none; counter-reset: step; padding-left: 0; }
+  .steps > li { counter-increment: step; position: relative; padding-left: 52px; margin-bottom: 18px; }
+  .steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%;
+                        background: var(--accent); color: #fff; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .table-wrap { overflow-x: auto; margin: 0 0 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; font-size: 16px; line-height: 1.5; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--tint); color: var(--accent-dark); font-weight: 700; }
+  tr:last-child td { border-bottom: 0; }
+  .pin-figure { margin: 36px auto; max-width: 400px; text-align: center; }
+  .pin-figure img { border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.12); display: block; }
+  blockquote { margin: 0 0 24px; padding: 4px 0 4px 20px; border-left: 3px solid var(--line); color: var(--muted); font-style: italic; }
+  .post-cta { display: flex; gap: 24px; align-items: center; background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--accent);
+              border-radius: 14px; padding: 24px; margin: 48px 0 8px; }
+  .post-cta img { width: 150px; border-radius: 10px; flex-shrink: 0; }
+  .post-cta h3 { margin: 2px 0 6px; }
+  .post-cta p { margin-bottom: 12px; font-size: 16px; }
+  .cta-kicker { font-size: 13px !important; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 !important; }
+  .buy-button { display: inline-block; background: var(--accent); color: #fff !important; padding: 12px 22px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; }
+  .buy-button:hover { background: var(--accent-dark); }
+  .product-box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin: 24px 0 36px; display: grid; grid-template-columns: 200px 1fr; gap: 0 24px; align-items: center; }
+  .product-box img { width: 200px; border-radius: 10px; grid-row: span 3; }
+  .product-box h3 { margin: 0 0 6px; }
+  .product-box p { margin-bottom: 12px; font-size: 16px; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; margin: 12px 0 36px; }
+  .product-card { display: flex; flex-direction: column; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.4; }
+  .product-card:hover { border-color: var(--accent); }
+  .product-card img { width: 100%; border-radius: 8px; margin-bottom: 4px; }
+  .product-card span { color: var(--muted); }
+  .product-card .price { color: var(--accent); font-weight: 700; }
+  .post-list { list-style: none; padding: 0; display: grid; gap: 16px; }
+  .post-list li { margin: 0; }
+  .post-card { display: flex; gap: 18px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: var(--ink); text-decoration: none; }
+  .post-card:hover { border-color: var(--accent); }
+  .post-card img { width: 200px; object-fit: cover; flex-shrink: 0; background: var(--tint); }
+  .post-card-text { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 16px 0; }
+  .post-card-text strong { font-size: 19px; line-height: 1.35; }
+  .post-card-desc { color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .post-card-date { color: var(--muted); font-size: 13px; }
+  .site-footer { border-top: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 15px; }
+  .site-footer .inner { max-width: 760px; margin: 0 auto; padding: 28px 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .site-footer p { margin: 0; }
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    h2 { font-size: 23px; margin-top: 40px; }
+    .post-cta, .post-card { flex-direction: column; }
+    .post-cta img { width: 120px; }
+    .post-card img { width: 100%; aspect-ratio: 16 / 9; }
+    .post-card-text { padding: 0 16px 16px; }
+    .product-box { grid-template-columns: 1fr; }
+    .product-box img { grid-row: auto; margin-bottom: 12px; }
+  }
 </style>
 </head>
 <body>
-<header><nav><a href="index.html">Home</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></header>
+<header class="site-header"><div class="inner">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Multi-Cat Health</a>
+<nav><a href="index.html">Guides</a><a href="pillar-guide.html">Start here</a></nav>
+</div></header>
+<main>
 <article>
 <h1>Building Your Daily Tracking Routine: How to Log Without Overwhelm</h1>
-<p class="date">2026-08-21</p>
 <p class="pillar-link"><a href="pillar-guide.html">&larr; Back to the Complete Multi-Cat Household Guide</a></p>
+<p class="post-meta"><time datetime="2026-08-21">August 21, 2026</time> &middot; 4 min read</p>
+<figure class="post-hero"><img src="images/hero/daily-tracking-routine.jpg" alt="Orange and white cat sitting on a kitchen counter in morning light" width="1200" height="675"><figcaption>Photo: <a href="https://www.flickr.com/photos/53133240@N00/3258414530" rel="nofollow">Muffet</a>, <a href="https://creativecommons.org/licenses/by/2.0/" rel="license nofollow">CC BY 2.0</a></figcaption></figure>
+<div class="key-takeaways">
+<p class="box-title">Key takeaways</p>
+<ul>
+<li><strong>It takes minutes, not hours:</strong> a practical routine fits into a few minutes a day and saves mental energy.</li>
+<li><strong>Anchor to existing habits:</strong> tie checks to morning coffee, a lunch break or bedtime.</li>
+<li><strong>Log only what you saw:</strong> leave blanks or write "not observed" instead of guessing.</li>
+<li><strong>Review weekly:</strong> ten minutes once a week reveals trends daily notes miss.</li>
+<li><strong>Consistency beats perfection:</strong> simple, honest daily tracking outlasts an ambitious system you abandon.</li>
+</ul>
+</div>
+<nav class="toc" aria-label="Contents"><p class="toc-title">In this guide</p>
+<ol>
+<li><a href="#start-small-the-5-minute-daily-practice">Start Small: The 5-Minute Daily Practice</a></li>
+<li><a href="#choose-your-tracking-windows">Choose Your Tracking Windows</a></li>
+<li><a href="#keep-a-simple-notebook-nearby">Keep a Simple Notebook Nearby</a></li>
+<li><a href="#focus-on-what-you-can-observe">Focus on What You Can Observe</a></li>
+<li><a href="#use-time-labels-for-clarity">Use Time Labels for Clarity</a></li>
+<li><a href="#build-a-weekly-review-into-your-routine">Build a Weekly Review Into Your Routine</a></li>
+<li><a href="#make-it-a-sustainable-habit">Make It a Sustainable Habit</a></li>
+</ol></nav>
+<h2 id="start-small-the-5-minute-daily-practice">Start Small: The 5-Minute Daily Practice</h2>
 
-<h2>Start Small: The 5-Minute Daily Practice That Changes Everything</h2>
+<p>If the idea of tracking your multi-cat household sounds like it will add hours to your day, take a breath. It won't. A practical tracking routine takes just a few minutes each day.</p>
 
-<p>If the idea of tracking your multi-cat household sounds like it will add hours to your day, take a breath. It won't. A practical tracking routine takes just a few minutes each day—and unlike trying to remember details from memory later, it actually saves you mental energy by getting observations out of your head and onto a record you can return to anytime.</p>
+<p>Unlike trying to remember details later, it actually saves you mental energy by getting observations out of your head and onto a record you can return to anytime. The key is to make it a small, manageable habit rather than an overwhelming extra chore, whether you have two cats or ten.</p>
 
-<p>The key to building a sustainable tracking routine is to make it a small, manageable habit rather than an overwhelming additional chore. This post walks you through how to establish a routine that fits into your actual life, whether you have two cats or ten.</p>
+<h2 id="choose-your-tracking-windows">Choose Your Tracking Windows</h2>
 
-<h2>Choose Your Tracking Windows</h2>
+<p>The most realistic routines anchor to natural breaks in your day. Most cat owners find tracking works best around meals, bathroom breaks or other established routines.</p>
 
-<p>The most realistic tracking routines anchor to natural breaks in your day. Most cat owners find that tracking works best around meals, bathroom breaks, or other established routines. Here are a few common approaches:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Window</th><th>Time</th><th>What to note</th></tr></thead>
+<tbody>
+<tr><td><strong>Morning check</strong></td><td>2&ndash;3 minutes</td><td>During coffee or breakfast: which cats you see, their general activity level and anything from overnight, like litter box activity or behavioral changes. Sets the tone for the day.</td></tr>
+<tr><td><strong>Midday note</strong></td><td>1&ndash;2 minutes</td><td>If you're home or on a lunch break: did that cat eat their morning food? Did you hear someone use the litter box?</td></tr>
+<tr><td><strong>Evening review</strong></td><td>A few minutes</td><td>Before bed, consolidate what you noticed through the day and log it all at once. Even if this is your only formal session, it ensures you have a record.</td></tr>
+</tbody>
+</table>
+</div>
 
-<p><strong>Morning Check:</strong> As part of your morning coffee or breakfast routine, spend a minute or two observing your cats. Note which cats you see, their general activity level, and any observations from overnight (like whether you noticed litter box activity or any behavioral changes). This morning observation takes 2-3 minutes and sets the tone for the day's tracking.</p>
+<div class="callout tip">
+<p class="box-title">You don't have to fill every cell</p>
+<p>Not every cat needs to be logged every day for every column. Log what you actually observed. If you didn't see a cat eat, leave that cell blank or note "not observed." The tracker is for recording reality, not for filling in guesses.</p>
+</div>
 
-<p><strong>Midday Note:</strong> If you're home at midday, or during a lunch break, take a quick look and add any observations. This is often when you notice things like "Did that cat eat their morning food?" or "I heard someone use the litter box." A quick 1-2 minute check.</p>
+<h2 id="keep-a-simple-notebook-nearby">Keep a Simple Notebook Nearby</h2>
 
-<p><strong>Evening Review:</strong> Before bed, spend a few minutes adding the day's observations to your tracker. This is often when you consolidate what you noticed throughout the day and log it all at once. Even if you only do one formal logging session per day, making it your evening routine ensures you have a record.</p>
+<p>If you can't update your tracker during the day, keep a small notebook or use your phone's notes app to jot quick observations:</p>
 
-<p>Not every cat needs to be logged every day for every column. Log what you actually observed. If you didn't see a cat eat, leave that cell blank or note "not observed." The tracker is for recording reality, not for filling in guesses or assumed information.</p>
+<ul>
+<li>"9:30am &mdash; Shadow in litter box"</li>
+<li>"Noon &mdash; Whiskers didn't finish breakfast"</li>
+<li>"4pm &mdash; Luna very active, playing"</li>
+</ul>
 
-<h2>Keep a Simple Notebook Nearby</h2>
+<p>Then consolidate these quick notes into your formal tracker during your evening session. This two-step approach keeps you from losing observations while giving you flexibility about when you sit down to update the full tracker.</p>
 
-<p>If you can't update your tracker immediately throughout the day, keep a small notebook or use your phone's notes app to jot quick observations. Something like "9:30am—Shadow in litter box" or "Noon—Whiskers didn't finish breakfast" or "4pm—Luna very active, playing." Then consolidate these quick notes into your formal tracker during your evening session. This two-step approach keeps you from losing observations while also giving you flexibility about when you actually sit down to update the full tracker.</p>
+<h2 id="focus-on-what-you-can-observe">Focus on What You Can Observe</h2>
 
-<h2>Focus on What You Can Observe</h2>
+<p>A routine is sustainable only if it's based on observations you can realistically make. Don't try to track something you can't see.</p>
 
-<p>A tracking routine is sustainable only if it's based on observations you can realistically make. Don't try to track something you can't see. For example, if you have multiple cats sharing a litter box and can't distinguish which cat used it, just note the total litter box usage you observed for that day. If you don't know exactly how much water one cat drank, write "normal" or "high" based on what you actually see. The goal is not perfect data—it's honest observations that give you a clearer picture than guessing from memory.</p>
+<ul>
+<li><strong>Shared litter boxes.</strong> If several cats share a box and you can't tell which cat used it, just note the total usage you observed that day.</li>
+<li><strong>Water intake.</strong> If you don't know exactly how much one cat drank, write "normal" or "high" based on what you actually see.</li>
+</ul>
 
-<h2>Use Time Labels for Clarity</h2>
+<p>The goal is not perfect data. It's honest observations that give you a clearer picture than guessing from memory.</p>
 
-<p>When you log an observation, include a time label in your notes column: "Morning check," "Midday," or "Evening." This helps you remember when in the day you made the observation and whether it represents the whole day or just a snapshot. It also helps your vet understand the timeline if you share the tracker.</p>
+<figure class="pin-figure">
+<img src="images/pins/daily-tracking-routine.jpg" alt="Infographic: five tips for a 5-minute daily cat tracking routine" width="600" height="900" loading="lazy">
+<figcaption>Save this summary to Pinterest for later.</figcaption>
+</figure>
 
-<p>For example: "Date: Tuesday, Time: Morning check, Cat: Mittens, Behavior notes: Eating normally, active play." This tells a much clearer story than just "normal" without context.</p>
+<h2 id="use-time-labels-for-clarity">Use Time Labels for Clarity</h2>
 
-<h2>Build Weekly Review Into Your Routine</h2>
+<p>When you log an observation, include a time label in your notes column: "Morning check," "Midday" or "Evening." This shows when in the day you made the observation and whether it represents the whole day or just a snapshot. It also helps your vet understand the timeline if you share the tracker.</p>
 
-<p>Once a week—perhaps Sunday evening or whenever works for you—spend 10 minutes reviewing the week's tracker. Look for patterns. Did any cat's behavior shift noticeably? Did anyone's appetite increase or decrease? Is their activity level typical or different? This weekly review helps you notice trends that day-to-day observations might miss, and it gives you a chance to notice things developing over time.</p>
+<div class="callout tip">
+<p class="box-title">Example entry</p>
+<p>"Date: Tuesday, Time: Morning check, Cat: Mittens, Behavior notes: Eating normally, active play." This tells a much clearer story than just "normal" without context.</p>
+</div>
 
-<h2>Make It a Sustainable Habit</h2>
+<h2 id="build-a-weekly-review-into-your-routine">Build a Weekly Review Into Your Routine</h2>
 
-<p>The most important aspect of any tracking routine is consistency. It's far better to track honestly and simply every single day than to aim for perfection and then abandon the tracker because it feels like too much. Start with just morning and evening observations if that's all you have time for. After a week or two, you might find it feels natural to add a midday check. The routine evolves as it becomes part of your life.</p>
+<p>Once a week, perhaps Sunday evening or whenever works for you, spend 10 minutes reviewing the week's tracker and look for patterns:</p>
 
-<p>To get started with a structured, ready-to-use tracking system that takes the guesswork out of format and organization, <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">download the Multi-Cat Household Health & Litter Tracker</a>. It comes with example rows showing exactly how daily logging looks in practice, so you can jump right in without having to figure out your own system from scratch.</p>
+<ul>
+<li><strong>Behavior.</strong> Did any cat's behavior shift noticeably?</li>
+<li><strong>Appetite.</strong> Did anyone's appetite increase or decrease?</li>
+<li><strong>Activity.</strong> Is each cat's activity level typical or different?</li>
+</ul>
+
+<p>This weekly review helps you notice trends that day-to-day observations might miss, and things developing over time.</p>
+
+<h2 id="make-it-a-sustainable-habit">Make It a Sustainable Habit</h2>
+
+<p>The most important part of any tracking routine is consistency. It's far better to track honestly and simply every day than to aim for perfection and then abandon the tracker because it feels like too much.</p>
+
+<ol class="steps">
+<li><strong>Start with morning and evening.</strong> If that's all you have time for, that's enough.</li>
+<li><strong>Give it a week or two.</strong> Let the routine settle in.</li>
+<li><strong>Add a midday check if it feels natural.</strong> The routine evolves as it becomes part of your life.</li>
+</ol>
+
+<p>To get started with a structured, ready-to-use tracking system that takes the guesswork out of format and organization, <a href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">download the Multi-Cat Household Health &amp; Litter Tracker</a>. It comes with example rows showing exactly how daily logging looks in practice, so you can jump right in without having to figure out your own system from scratch.</p>
+
+<aside class="post-cta">
+<img src="cover-600x600.png" alt="Multi-Cat Household Health & Litter Tracker" loading="lazy">
+<div><p class="cta-kicker">Make it easy to keep track</p>
+<h3>Multi-Cat Household Health & Litter Tracker</h3>
+<p>A ready-to-use spreadsheet and guide for tracking each cat's daily health and litter habits.</p>
+<p><a class="buy-button" href="#" data-paddle-price-id="pri_01m1b583bn497kqxexe7ryx6pz">Get the Tracker &middot; $14.99</a></p></div>
+</aside>
 
 </article>
-<footer><p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Subscribe for an email when new posts go live</a></p><p>&copy; 2026</p></footer>
+</main>
+<footer class="site-footer"><div class="inner">
+<p><a href="https://multi-cat-tracker.beehiiv.com/subscribe">Get an email when new guides go live</a></p>
+<p>&copy; 2026 SimpleTrackers &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
+</div></footer>
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
   Paddle.Initialize({ token: "live_2c65c91a22a9d6a12b1872dcedb" });

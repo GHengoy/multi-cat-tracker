@@ -1,1 +1,13 @@
-{"title": "Adjusting What You Track: Seasonal Changes and Life Stages", "date": "2026-08-21", "description": "What normal looks like for your cats shifts with seasons and age. Learn how to adjust what you track for kittens, seniors, and seasonal changes."}
+{
+  "title": "Adjusting What You Track: Seasonal Changes and Life Stages",
+  "date": "2026-08-21",
+  "description": "What normal looks like for your cats shifts with seasons and age. Learn how to adjust what you track for kittens, seniors, and seasonal changes.",
+  "hero": {
+    "src": "images/hero/seasonal-life-stage-adjustments.jpg",
+    "alt": "Siamese cat watching wintry weather through a window",
+    "credit": "emdot",
+    "credit_url": "https://www.flickr.com/photos/35237093637@N01/101887638",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
+  }
+}

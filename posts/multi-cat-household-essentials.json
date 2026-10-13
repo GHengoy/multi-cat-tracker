@@ -1,1 +1,13 @@
-{"title": "Multi-Cat Household Essentials: Products That Actually Help", "date": "2026-08-25", "description": "Products that genuinely help multi-cat homes run smoothly, from litter setups to feeding and enrichment, chosen to reduce stress for every cat."}
+{
+  "title": "Multi-Cat Household Essentials: Products That Actually Help",
+  "date": "2026-08-25",
+  "description": "Products that genuinely help multi-cat homes run smoothly, from litter setups to feeding and enrichment, chosen to reduce stress for every cat.",
+  "hero": {
+    "src": "images/hero/multi-cat-household-essentials.jpg",
+    "alt": "Tall shelf-style cat tree by a window with two cats climbing it",
+    "credit": "EBKauai",
+    "credit_url": "https://www.flickr.com/photos/13470115@N08/5871321315",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
+  }
+}

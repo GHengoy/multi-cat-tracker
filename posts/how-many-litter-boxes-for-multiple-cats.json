@@ -1,1 +1,13 @@
-{"title": "How Many Litter Boxes Do You Need for Multiple Cats?", "date": "2026-09-07", "description": "How many litter boxes do multiple cats need? The one-per-cat-plus-one rule explained, with placement tips and signs your setup isn't working."}
+{
+  "title": "How Many Litter Boxes Do You Need for Multiple Cats?",
+  "date": "2026-09-07",
+  "description": "How many litter boxes do multiple cats need? The one-per-cat-plus-one rule explained, with placement tips and signs your setup isn't working.",
+  "hero": {
+    "src": "images/hero/how-many-litter-boxes-for-multiple-cats.jpg",
+    "alt": "Black cat lying in a blue litter box on a wooden floor",
+    "credit": "wolfsavard",
+    "credit_url": "https://www.flickr.com/photos/31369133@N04/3873959131",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
+  }
+}

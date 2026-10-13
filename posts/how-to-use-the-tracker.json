@@ -1,1 +1,13 @@
-{"title": "How to Use the Multi-Cat Household Health & Litter Tracker: Complete Walkthrough", "date": "2026-08-21", "description": "A column-by-column walkthrough of the Multi-Cat Household Health & Litter Tracker, with example entries showing how to log each cat."}
+{
+  "title": "How to Use the Multi-Cat Household Health & Litter Tracker: Complete Walkthrough",
+  "date": "2026-08-21",
+  "description": "A column-by-column walkthrough of the Multi-Cat Household Health & Litter Tracker, with example entries showing how to log each cat.",
+  "hero": {
+    "src": "images/hero/how-to-use-the-tracker.jpg",
+    "alt": "Tabby cat resting on a desk beside an open laptop",
+    "credit": "Muffet",
+    "credit_url": "https://www.flickr.com/photos/53133240@N00/6251399",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
+  }
+}
