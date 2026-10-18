@@ -1,5 +1,14 @@
 # Operations Log
 
+## [2026-10-19] CONTENT | New post: How to Tell Which Cat Is Using the Litter Box
+
+- Added search-intent post targeting "which cat is using the litter box" / "which cat is peeing outside the box" queries, not previously covered (existing litter box post only addressed box count, not identifying the responsible cat)
+- Covers direct observation, a short temporary-separation test, reading physical clues (clump size, paw prints, timing, digging style), camera/microchip-reading litter box options, and logging what's found instead of relying on memory
+- 919 words; all forbidden substrings avoided (diagnosis, prescribe, dosage, cures, treats your pet); ends with the standard Paddle checkout CTA
+- Added linked `<h2>` section to pillar-guide.html ("Figuring Out Which Cat Is Behind a Litter Box Mystery") before the FAQ section, with a back-link from the new post
+- No hero photo: 3 Openverse searches (varied query broadening) returned only off-topic or already-used images (one duplicate of the existing how-many-litter-boxes-for-multiple-cats.jpg); published without a lead image per the no-photo fallback
+- All posts pass `validate_post.py`; site rebuilt via `build_site.py`; full unittest suite passes (53 tests)
+
 ## [2026-10-12] CONTENT | New post: How Often Should You Weigh Each Cat in a Multi-Cat Household?
 
 - Added search-intent post targeting "how often should you weigh your cat(s)" / weight-tracking queries, not previously covered by any post title
