@@ -96,3 +96,10 @@
 - Added `homepage.json` (hero + $14.99 product box, Paddle checkout button) — previously the homepage had no buy button
 - `build_site.py` unified across all three niche repos (unlisted posts, homepage hero, Paddle-or-URL buy button)
 - Context: Search Console showed only the homepage indexed and sitemaps "couldn't fetch"; sitemaps resubmitted and indexing requested 2026-10-03
+
+## [2026-10-29] CONTENT | 기존 포스트 12편을 4컷 만화+핵심 3줄 형식으로 변환
+
+- 기존 포스트 12편을 4컷 만화+핵심 3줄 형식으로 변환 (본문 html만 교체, json/슬러그/URL 유지)
+- 대상: how-to-tell-if-one-cat-is-not-eating, analyzing-patterns-with-your-vet, daily-tracking-routine, how-many-litter-boxes-for-multiple-cats, how-often-to-weigh-cats-multi-cat-household, how-to-use-the-tracker, multi-cat-household-essentials, seasonal-life-stage-adjustments, tracking-faq, tracking-mistakes-to-avoid, which-cat-is-using-the-litter-box, why-tracking-matters
+- 제외: terms, privacy(법적 문서), pillar-guide(허브 페이지)
+- 이전 장문 버전은 git 히스토리에 보존
