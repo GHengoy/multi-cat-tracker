@@ -1,5 +1,14 @@
 # Operations Log
 
+## [2026-10-29] CONTENT | New post: How to Tell If One of Your Cats Isn't Eating When They Share Food
+
+- Added search-intent post targeting "how to tell if one cat isn't eating" / "multiple cats sharing food bowl who is eating" queries, not previously covered (weight post only mentioned shared bowls in passing)
+- Covers switching to scheduled supervised meals, behavioral signs one cat is eating less, ruling out food competition (comparison table + feed-alone test), when to call the vet (~24 hours), and per-cat appetite logging
+- 984 words; all forbidden substrings avoided (diagnosis, prescribe, dosage, cures, treats your pet); ends with the standard Paddle checkout CTA
+- Added linked `<h2>` section to pillar-guide.html ("Knowing Whether Every Cat Is Actually Eating") before the FAQ section, with a back-link from the new post
+- Hero photo: Wikimedia Commons, black-and-white cat eating wet food from a glass bowl (CC BY 4.0, Jay KapLon)
+- All posts pass `validate_post.py`; site rebuilt via `build_site.py`; full unittest suite passes (53 tests)
+
 ## [2026-10-19] CONTENT | New post: How to Tell Which Cat Is Using the Litter Box
 
 - Added search-intent post targeting "which cat is using the litter box" / "which cat is peeing outside the box" queries, not previously covered (existing litter box post only addressed box count, not identifying the responsible cat)
