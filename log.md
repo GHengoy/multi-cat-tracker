@@ -1,5 +1,13 @@
 # Operations Log
 
+## [2026-11-02] CONTENT | New post: Who Left That on the Rug? How to Tell Which Cat Is Throwing Up
+
+- Added short comic-story post targeting "how to tell which cat is throwing up" / "which cat is vomiting multiple cats" queries, not previously covered
+- Four-panel comic (blaming the guilty-looking cat -> logging time, place and contents -> notes point to the real cat), three takeaways, CTA for the Behavior Notes / Cat Name columns with the standard Paddle checkout link
+- Added linked `<h2>` section to pillar-guide.html ("Finding Out Which Cat Is Throwing Up") before the FAQ section
+- No hero photo: the image search API timed out on all three attempts
+- Passes `validate_post.py`; site rebuilt via `build_site.py`; full unittest suite passes (55 tests)
+
 ## [2026-10-29] CONTENT | New post: How to Tell If One of Your Cats Isn't Eating When They Share Food
 
 - Added search-intent post targeting "how to tell if one cat isn't eating" / "multiple cats sharing food bowl who is eating" queries, not previously covered (weight post only mentioned shared bowls in passing)
