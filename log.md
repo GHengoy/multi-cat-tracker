@@ -1,5 +1,13 @@
 # Operations Log
 
+## [2026-11-09] CONTENT | New post: The Water Bowl Keeps Emptying: How to Tell Which Cat Is Drinking More
+
+- Added short comic-story post targeting "how to tell which cat is drinking more water" / "one cat drinking a lot multi-cat" queries, not previously covered
+- Four-panel comic (bowl emptying -> blaming the heat -> measured refills and watching who drinks -> log points to one cat, call the vet), three takeaways, CTA for the Water Intake (ml) / Cat Name columns with the standard Paddle checkout link
+- Added linked `<h2>` section to pillar-guide.html ("Working Out Which Cat Is Drinking More") before the FAQ section
+- Hero photo: cat drinking from a pet fountain (Lisa Zins, CC BY 2.0)
+- Passes `validate_post.py`; site rebuilt via `build_site.py`; full unittest suite passes (55 tests)
+
 ## [2026-11-02] CONTENT | New post: Who Left That on the Rug? How to Tell Which Cat Is Throwing Up
 
 - Added short comic-story post targeting "how to tell which cat is throwing up" / "which cat is vomiting multiple cats" queries, not previously covered
