@@ -1,5 +1,13 @@
 # Operations Log
 
+## [2026-11-16] CONTENT | New post: New Kitten, Grumpy Resident: What to Track When Introducing a New Cat
+
+- Added short comic-story post targeting "what to track when introducing a new cat" / "new cat introduction resident cat stress" queries, not previously covered
+- Four-panel comic (new kitten arrives -> only watching the newcomer -> logging both cats daily -> log shows the resident cat skipping meals, slow down), three takeaways, CTA for the Appetite Level / Litter Box Visits / Behavior Notes columns with the standard Paddle checkout link
+- Added linked `<h2>` section to pillar-guide.html ("Tracking Every Cat When a New One Arrives") before the FAQ section
+- Hero photo: orange tabby kitten on a wooden table (Joseph SARDIN, CC BY 2.0)
+- Passes `validate_post.py`; site rebuilt via `build_site.py`; full unittest suite passes (55 tests)
+
 ## [2026-11-09] CONTENT | New post: The Water Bowl Keeps Emptying: How to Tell Which Cat Is Drinking More
 
 - Added short comic-story post targeting "how to tell which cat is drinking more water" / "one cat drinking a lot multi-cat" queries, not previously covered
